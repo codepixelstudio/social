@@ -1,0 +1,47 @@
+// stylehseet :: base header styles
+
+    // settings
+    $header : 1rem;
+
+    // styles
+    .state-header {
+
+        position: relative;
+
+        position: fixed;
+
+        top: 0;
+        right: 0;
+        left: 0;
+
+        z-index: 200;
+
+        @include flex-h-s-v-c( false );
+
+        height: 5rem;
+        padding: 0 0 0 5rem;
+
+        @include shadowbox( 0.5rem, 2rem, black, 0.785 );
+
+        // dark UI
+        &.dark-ui {
+
+            @include fill( $g135, 0.000 );
+
+        }
+
+        // lite UI
+        &.lite-ui {
+
+            @include fill( white, 0.000 );
+
+        }
+
+        // logged in
+        .logged-in & {
+
+            top: 2rem;
+
+        }
+
+    }

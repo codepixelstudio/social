@@ -1,0 +1,223 @@
+// stylesheet :: header barand elements
+
+    // settings
+    $brand : $g140;
+
+    // rams.brand
+    #brand-rams {
+
+        position: absolute;
+
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        width: 5rem;
+        height: 5rem;
+        margin: 0;
+        padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+
+        transition: all 320ms $outex 0ms;
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            width: 4rem;
+            height: 4rem;
+            padding: 0;
+
+        }
+
+        // hover state
+        &:hover {
+
+            .brand-icon {
+
+                .path {
+
+                    fill-opacity: 1.000;
+
+                    transition: all 220ms linear 0ms;
+
+                }
+
+                .brand-fill {
+
+                    fill: $g140;
+
+                }
+
+            }
+
+        }
+
+        // dark UI
+        .dark-ui & {
+
+            // svg
+            .brand-icon {
+
+                .brand-fill {
+
+                    fill: $dark;
+                    fill-opacity: 0.625;
+
+                }
+
+            }
+
+        }
+
+        // lite UI
+        .lite-ui & {
+
+            // svg
+            .brand-icon {
+
+                .brand-fill {
+
+                    fill: $g140;
+                    fill-opacity: 1.000;
+
+                }
+
+            }
+
+        }
+
+        // svg
+        .brand-icon {
+
+            width: 4.5rem;
+            height: 4.5rem;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                width: 4rem;
+                height: 4rem;
+
+            }
+
+            .path {
+
+                transition: all 220ms linear 0ms;
+
+            }
+
+            .brand-stroke {
+
+                fill: $gold;
+
+            }
+
+            .brand-shapes {
+
+                fill: white;
+                fill-opacity: 0.925;
+
+            }
+
+        }
+
+    }
+
+    // state.brand
+    #brand-state {
+
+        position: relative;
+
+        z-index: 10;
+
+        @include flex-h-s-v-c( false );
+
+        height: 5rem;
+
+        padding: 1rem 0 1rem 0;
+
+        text-decoration: none;
+
+        // dark UI
+        .dark-ui & {
+
+            @include color( white, 0.000 );
+
+        }
+
+        // lite UI
+        .lite-ui & {
+
+            @include color( $g140, 0.000 );
+
+        }
+
+        #brand-state-text {
+
+            @include flex-h-s-v-c( true );
+
+            height: 2rem;
+            margin: 0;
+            padding: 0 0.75rem 0 0;
+
+            @include font( $industry, 1.125rem, 700 );
+
+            @include text( $up, left );
+
+            // linear
+            &.linear {
+
+                height: 2rem;
+
+                @include font( inherit, 1.25rem, 700 );
+
+                @include typo( 2rem, 0.025em );
+
+                // line break
+                br {
+
+                    @include hide;
+
+                }
+
+            }
+
+            // stack
+            &.stack {
+
+                @include typo( 1.25rem, 0.025em );
+
+            }
+
+            // mobile
+            .mobile {
+
+                @include hide;
+
+                @include font( $industry, 1.75rem, 700 );
+
+                letter-spacing: 0.035em;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include flex-h-c-v-c( false );
+
+                }
+
+            }
+
+            // desktop
+            .desktop {
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include hide;
+
+                }
+
+            }
+
+        }
+
+    }

@@ -1,0 +1,13 @@
+// stylesheet :: base footer styles
+
+    // settings
+    $footer : 1rem;
+
+    // styles
+    .state-footer {
+
+        @include fill( $g140, 0.000 );
+
+        @include color( white, 0.000 );
+
+    }

@@ -1,0 +1,22 @@
+// stylesheet :: base body settings
+
+    // settings
+    $body : 1rem;
+
+    // styles
+    body {
+
+        position: relative;
+
+        // @include font( $industry, inherit, 500 );
+
+        padding: 5rem 0 0 0;
+
+        // logged in
+        &.logged-in {
+
+            padding: 7rem 0 0 0;
+
+        }
+
+    }

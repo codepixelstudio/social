@@ -1,0 +1,13 @@
+// stylesheet :: footer components stylesheet compiler
+
+    // base
+    @import 'footer.base';
+
+    // required
+    @import 'footer.layout';
+
+    // megafooter
+    @import 'footer.megafooter';
+
+    // required
+    @import 'footer.required';
