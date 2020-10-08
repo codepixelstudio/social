@@ -12,8 +12,18 @@
 
         padding: 5rem 0 0 0;
 
+        font-weight: 500;
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            padding: 4rem 0 0 0;
+
+        }
+
         // logged in
-        &.logged-in {
+        &.logged-ins,
+        &.admin-bar {
 
             padding: 7rem 0 0 0;
 

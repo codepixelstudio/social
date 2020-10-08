@@ -1,13 +1,8 @@
+
 <!-- footer -->
-<footer class="state-footer">
+<footer class="state_footer dark_ui">
 
-    <!-- megafooter -->
-    <div class="megafooter">
-
-        megafooter
-
-    </div>
-    <!-- END megafooter -->
+    <?php get_template_part( 'components/footer/footer.megafooter' ); ?>
 
     <!-- required footer -->
     <div class="required">

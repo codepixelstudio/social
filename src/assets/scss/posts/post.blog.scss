@@ -1,0 +1,268 @@
+// stylesheet :: blog/homepage post styles
+
+    // settings
+    $post : 1rem;
+
+    // container
+    .main-container {
+
+        // body class
+        .blog &,
+        .archive & {
+
+            @include flex-v-t-h-c( false );
+
+            max-width: none;
+            padding: 2rem 0 0 0;
+
+            // grid
+            .main-grid {
+
+                @include flex-v-t-h-c( false );
+
+                margin: 0 0 0 0;
+
+            }
+
+            // content
+            .the_content {
+
+                @include flex-h-j-v-t( false );
+
+                // display: grid;
+
+                flex-wrap: wrap;
+
+                // grid-template-columns: calc( 33.3333333% - 1.3333333rem ) calc( 33.3333333% - 1.3333333rem ) calc( 33.3333333% - 1.3333333rem );
+                // grid-template-columns: calc( 25% - 1.5rem ) calc( 25% - 1.5rem ) calc( 25% - 1.5rem ) calc( 25% - 1.5rem );
+
+                // grid-gap: 2rem;
+
+                width: 80vw;
+                margin: 0 0 0 0;
+
+                // mobile
+                @include breakpoint ( xlarge down ) {
+
+                    width: 100vw;
+                    padding: 0 1rem 0 1rem;
+
+                }
+
+                // mobile
+                @include breakpoint ( medium only ) {
+
+                    grid-template-columns: calc( 50% - 1rem ) calc( 50% - 1rem );
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include flex-v-t-h-st( false );
+
+                    padding: 0 2rem 0 2rem;
+
+                }
+
+            }
+
+            // styles
+            .post {
+
+                width: calc( 33.3333333% - 2rem );
+                margin: 0 1rem 2rem 1rem;
+
+                @include shadowbox( 1rem, 3.5rem, black, 0.645 );
+
+                // mobile
+                @include breakpoint ( medium down ) {
+
+                    width: calc( 50% - 2rem );
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    width: 100%;
+
+                    margin: 0 0 2rem 0;
+
+                }
+
+                // hover state
+                &:hover {
+
+                    //
+
+                }
+
+                // header
+                header {
+
+                    margin: 0 0 0.5rem 0;
+
+                    // image
+                    .featured_image {
+
+                        height: 20rem;
+                        margin: 0 0 1rem 0;
+
+                        background: {
+
+                            repeat: no-repeat;
+                            size: cover;
+                            position: center center;
+
+                        }
+
+                    }
+
+                    // title
+                    .entry_title {
+
+                        margin: 0 0 0 0;
+                        padding: 0 2rem 0 2rem;
+
+                        @include font( $industry, 1.25rem, 700 );
+
+                        // link
+                        a {
+
+                            @include color( $app05, 0.265 );
+
+                            @include color( $cvnavy, 0.235 );
+
+                            @include color( $new_blue, 0.000 );
+
+                            transition: $all220;
+
+                            // hover state
+                            &:hover {
+
+                                @include color( $g140, 0.165 );
+
+                                @include color( $roarange, 0.000 );
+
+                            }
+
+                        }
+
+                    }
+
+                    // post meta
+                    .post-meta {
+
+                        // elements
+                        .meta {
+
+                            display: block;
+
+                        }
+
+                    }
+
+                }
+
+                // content
+                .entry_content {
+
+                    padding: 0 2rem 0 2rem;
+
+                    @include font( $industry, 1rem, 500 );
+
+                    @include color( $app05, 0.165 );
+
+                    // text
+                    p {
+
+                        margin: 0 0 0 0;
+
+                    }
+
+                }
+
+                // footer
+                footer {
+
+                    margin: 1rem 0 0 0;
+                    padding: 0 2rem 2rem 2rem;
+
+                    // post meta
+                    .post-meta {
+
+                        @include flex-h-s-v-c( false );
+
+                        height: 2rem;
+                        margin: 0 0 0 0;
+                        padding: 0.5rem 0 0.5rem 0;
+
+                        // avatar
+                        .avatar {
+
+                            display: inline-block;
+
+                            width: 2rem;
+                            height: 2rem;
+                            margin: 0 1rem 0 0;
+
+                            border-radius: 50%;
+
+                        }
+
+                        // metadata
+                        .metadata {
+
+
+
+                        }
+
+                        // elements
+                        .meta {
+
+                            display: block;
+
+                            margin: 0 0 0 0;
+
+                            @include font( $industry, 0.75rem, 600 );
+
+                            @include color( $app05, 0.365 );
+
+                            // author link
+                            &.author a {
+
+                                @include font( $industry, inherit, 700 );
+
+                                @include color( $new_blue, 0.000 );
+                                // @include color( $app05, 0.165 );
+
+                                // hover state
+                                &:hover {
+
+                                    @include color( $roarange, 0.000 );
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            // pagination
+            nav {
+
+                @include flex-h-c-v-c( false );
+
+                width: 100%;
+
+            }
+
+        }
+
+    }

@@ -1,0 +1,257 @@
+// stylesheet :: single post styles
+
+    // settings
+    $post : 1rem;
+
+    // image
+    .featured_image {
+
+        height: 50vh;
+
+        background: {
+
+            repeat: no-repeat;
+            size: cover;
+            position: center center;
+
+        }
+
+        // mobile
+        @include breakpoint ( medium down ) {
+
+            height: 40vh;
+
+        }
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            height: 25vh;
+
+        }
+
+    }
+
+    // container
+    .main-container {
+
+        // body class
+        .single-post & {
+
+            max-width: none;
+            padding: 0 0 0 0;
+
+            // grid
+            .main-grid {
+
+                margin: 0 0 0 0;
+
+            }
+
+            // content
+            .the_content {
+
+                @include flex-v-t-h-c( false );
+
+                width: 100%;
+                margin: 0 0 0 0;
+                padding: 5rem 0 0 0;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    padding: 2rem 0 0 0;
+
+                }
+
+            }
+
+            // post
+            .post {
+
+                // width: 36vw;
+                width: 50vw;
+                margin: 0 0 2rem 0;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    width: 100vw;
+                    padding: 0 2rem 0 2rem;
+
+                }
+
+                // mobile
+                @include breakpoint ( medium only ) {
+
+                    width: 100vw;
+                    padding: 2rem 5rem 0 5rem;
+
+                }
+
+                // header
+                header {
+
+                    // title
+                    .entry-title {
+
+                        margin: 0 0 1rem 0;
+
+                        @include font( $industry, 2.5rem, 600 );
+
+                        @include typo( 3rem, 0em );
+
+                        @include color( $g140, 0.000 );
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            @include font( $industry, 1.875rem, 600 );
+
+                            @include typo( 2.25rem, 0.015em );
+
+                        }
+
+                    }
+
+                    // subheadline
+                    .subheadline {
+
+                        @include flex-h-s-v-c( false );
+
+                        margin: 0 0 1rem 0;
+
+                        @include font( $industry, 1.5rem, 500 );
+
+                        @include color( $app05, 0.165 );
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            @include font( $industry, 1.125rem, 500 );
+
+                        }
+
+                    }
+
+                    // post meta
+                    .post-meta {
+
+                        @include flex-h-s-v-c( false );
+
+                        height: 3rem;
+                        margin: 0 0 1rem 0;
+                        padding: 0.5rem 0 0.5rem 0;
+
+                        // avatar
+                        .avatar {
+
+                            display: inline-block;
+
+                            width: 3rem;
+                            height: 3rem;
+                            margin: 0 1rem 0 0;
+
+                            border-radius: 50%;
+
+                        }
+
+                        // metadata
+                        .metadata {
+
+
+
+                        }
+
+                        // elements
+                        .meta {
+
+                            display: block;
+
+                            margin: 0 0 0 0;
+
+                            @include font( $industry, 0.75rem, 600 );
+
+                            @include color( $app05, 0.365 );
+
+                            // author link
+                            &.author a {
+
+                                @include font( $industry, inherit, 700 );
+
+                                @include color( $new_blue, 0.000 );
+
+                                // hover state
+                                &:hover {
+
+                                    @include color( $roarange, 0.000 );
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                // content
+                .entry-content {
+
+                    // paragraph
+                    p {
+
+                        @include typo( 2rem, inherit );
+
+                    }
+
+                }
+
+                // embeds
+                .iframely-embed,
+                iframe {
+
+                    width: 100%;
+                    max-width: 100%;
+                    // margin: 1rem 0 1rem 0;
+
+                    @include shadowbox( 1rem, 3rem, black, 0.675 );
+
+                    // shadow root
+                    :host {
+
+                        @include fill( red, 0.000 );
+
+                        // container
+                        > div.body {
+
+                            border: none !important;
+
+                        }
+
+                    }
+
+                    // document
+                    > .wp-embed {
+
+                        border: none !important;
+
+                    }
+
+                }
+
+                // document
+                html body .wp-embed {
+
+                    border: none !important;
+
+                    @include fill( red );
+
+                }
+
+            }
+
+        }
+
+    }

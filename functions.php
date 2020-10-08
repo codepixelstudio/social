@@ -1,40 +1,50 @@
 <?php
-/**
- * Author: Ole Fredrik Lie
- * URL: http://olefredrik.com
- *
- * FoundationPress functions and definitions
- *
- * Set up the theme and provides some helper functions, which are used in the
- * theme as custom template tags. Others are attached to action and filter
- * hooks in WordPress to change core functionality.
- *
- * @link https://codex.wordpress.org/Theme_Development
- * @package FoundationPress
- * @since FoundationPress 1.0.0
- */
 
-/** Various clean up functions */
-require_once( 'library/cleanup.php' );
+    // assorted cleanup functions
+    require_once(
 
-/** Required for Foundation to work properly */
-require_once( 'library/foundation.php' );
+        'library/cleanup/cleanup.php'
 
-/** Format comments */
-require_once( 'library/class-foundationpress-comments.php' );
+    );
 
-/** Register all navigation menus */
-require_once( 'library/navigation.php' );
+    // foundation framework
+    require_once(
 
-/** Add menu walkers for top-bar and off-canvas */
-require_once( 'library/class-foundationpress-top-bar-walker.php' );
-require_once( 'library/class-foundationpress-mobile-walker.php' );
+        'library/foundation.php'
+
+    );
+
+    // navigation menus
+    require_once(
+
+        // 'library/navigation.php'
+        'library/menus.php'
+
+    );
+
+    // custom post types
+    // require_once(
+
+        // 'library/post.types.php'
+
+    // );
 
 /** Create widget areas in sidebar and footer */
 require_once( 'library/widget-areas.php' );
 
-/** Return entry meta information for posts */
-require_once( 'library/entry-meta.php' );
+    // loop programs
+    require_once(
+
+        'library/loop/loop.php'
+
+    );
+
+    // admin
+    require_once(
+
+        'library/admin/admin.php'
+
+    );
 
 /** Enqueue scripts */
 require_once( 'library/enqueue-scripts.php' );

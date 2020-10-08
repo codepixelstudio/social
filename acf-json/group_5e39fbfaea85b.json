@@ -1,0 +1,67 @@
+{
+    "key": "group_5e39fbfaea85b",
+    "title": "Post Builder",
+    "fields": [
+        {
+            "key": "field_5e39fc10005c3",
+            "label": "Post Subheadline",
+            "name": "post_subheadline",
+            "type": "textarea",
+            "instructions": "(optional) provide a snappy bit of copy to act as an intro sentence; use line breaks for added visual control",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_5eb4365459724",
+            "label": "Card Image",
+            "name": "card_image",
+            "type": "image",
+            "instructions": "provide a square\/1:1 aspect ratio image to appear on the homepage card view",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1591996007
+}

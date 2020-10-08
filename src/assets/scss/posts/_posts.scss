@@ -1,0 +1,16 @@
+// stylesheet :: posts stylesheet compiler
+
+    // single
+    @import 'post.single';
+
+    // blog
+    @import 'post.blog';
+
+    // sidebar
+    @import 'post.sidebar';
+
+    // navigation
+    @import 'post.navigation';
+
+    // pagination
+    @import 'post.pagination';

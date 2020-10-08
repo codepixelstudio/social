@@ -13,4 +13,24 @@
 
         @include font( inherit, 0.75rem, 500 );
 
+        background: {
+
+            image: url(../img/layout/layout.footer.png);
+            repeat: no-repeat;
+            size: cover;
+            position: center center;
+
+        }
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            background: {
+
+                position: -70vh center;
+
+            }
+
+        }
+
     }

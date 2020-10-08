@@ -1,0 +1,288 @@
+// stylesheet :: meet the team styles
+
+    // settings
+    $team : 1rem;
+
+    // styles
+    .page-template-team {
+
+        // container
+        .main-container {
+
+            padding: 0 0 0 0;
+
+            // grid
+            .main-grid {
+
+                margin: 0 0 0 0;
+
+            }
+
+            // content
+            .the_content {
+
+                padding: 5rem 5rem 5rem 5rem;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    padding: 2rem 2rem 2rem 2rem;
+
+                }
+
+                // header
+                .page_header {
+
+                    @include flex-h-j-v-t( false );
+
+                    margin: 0 0 5rem 0;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        @include flex-v-t-h-st( false );
+
+                    }
+
+                    // common
+                    span {
+
+                        display: block;
+
+                    }
+
+                    // styled
+                    .styled_heading {
+
+                        @include font( 'Oswald', 4rem, 500 );
+
+                        @include text( $up );
+
+                        @include typo( 4rem, 0.000em );
+
+                        @include color( $new_blue, 0.000 );
+
+                        // highlight
+                        em {
+
+                            @include color( $roarange, 0.000 );
+
+                        }
+
+                    }
+
+                    // text
+                    .styled_text {
+
+                        margin: 0 0 0 5rem;
+
+                        @include font( $industry, 1rem, 600 );
+
+                        @include color( $new_blue, 0.000 );
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            margin: 2rem 0 0 0;
+
+                        }
+
+                    }
+
+                }
+
+                // bios1
+                .page_bios {
+
+                    display: grid;
+
+                    grid-template-columns: calc( 33.3333333% - 1.3333333rem ) calc( 33.3333333% - 1.3333333rem ) calc( 33.3333333% - 1.3333333rem );
+
+                    grid-gap: 2rem;
+
+                }
+
+                // links
+                .bio_link {
+
+                    position: relative;
+
+                    @include flex-v-b-h-c( false );
+
+                    height: 32rem;
+
+                    // @include fill( red, 0.685 );
+
+                    @include color( white, 0.000 );
+
+                    // hover state
+                    &:hover {
+
+                        // common
+                        &:before,
+                        &:after {
+
+                            transition: all 220ms linear 0ms;
+
+                        }
+
+                        // before
+                        &:before {
+
+                            opacity: 1.000
+
+                        }
+
+                        // after
+                        &:after {
+
+                            opacity: 0.765;
+
+                        }
+
+                    }
+
+                    // orange
+                    &.orange {
+
+                        // after
+                        &:after {
+
+                            @include fill( $roarange, 0.000 );
+
+                        }
+
+                        .tag {
+
+                            @include fill( $roarange, 0.000 );
+
+                        }
+
+                    }
+
+                    // yellow
+                    &.yellow {
+
+                        // after
+                        &:after {
+
+                            @include fill( $campaign, 0.000 );
+
+                        }
+
+                        .tag {
+
+                            @include fill( $campaign, 0.000 );
+
+                        }
+
+                    }
+
+                    // blue
+                    &.blue {
+
+                        // after
+                        &:after {
+
+                            @include fill( $blue, 0.000 );
+
+                        }
+
+                        .tag {
+
+                            @include fill( $blue, 0.000 );
+
+                        }
+
+                    }
+
+                    .tag {
+
+                        position: relative;
+
+                        z-index: 200;
+
+                        // padding: 2rem 2rem 2rem 2rem;
+                        padding: 1rem 1rem 1rem 1rem;
+
+                        .blue & {
+
+
+
+                        }
+
+                    }
+
+                    span {
+
+                        position: relative;
+
+                        z-index: 100;
+
+                        display: block;
+
+                        @include font( $industry, 1rem, 600 );
+
+                        @include text( $up );
+
+                        text-align: center;
+
+                        &.title {
+
+                            @include font( 'Oswald', 0.75rem, 400 );
+
+                        }
+
+                    }
+
+                    // common
+                    &:before,
+                    &:after {
+
+                        content: '';
+
+                        position: absolute;
+
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        transition: all 220ms linear 0ms;
+
+                    }
+
+                    // before
+                    &:before {
+
+                        z-index: 10;
+
+                        background: {
+
+                            image: url(../img/giroud.jpg);
+                            repeat: no-repeat;
+                            size: cover;
+                            position: top center;
+
+                        }
+
+                        opacity: 0.365;
+
+                    }
+
+                    // after
+                    &:after {
+
+                        z-index: 20;
+
+                        opacity: 0.000;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }

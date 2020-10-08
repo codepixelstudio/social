@@ -1,22 +1,33 @@
+
 <?php get_header(); ?>
 
 <div class="main-container">
 
 	<div class="main-grid">
 
-		<main class="main-content">
+		<main class="the_content">
 
-		<?php if ( have_posts() ) : ?>
+			<h1 class="entry_title">
+
+				<?php the_archive_title( 'ball so hard' ); ?>
+
+				<?php echo get_the_archive_title(); ?>
+
+			</h1>
+
+			<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'components/content/content.base', get_post_format() ); ?>
+			<?php // get_template_part( 'components/content/content.base', get_post_format() ); ?>
+
+			<?php get_template_part( 'components/content/content.home', get_post_format() ); ?>
 
 			<?php endwhile; ?>
 
 			<?php else : ?>
 
-				<?php get_template_part( 'components/content/content.base.none' ); ?>
+			<?php get_template_part( 'components/content.none' ); ?>
 
 			<?php endif; ?>
 
@@ -30,4 +41,4 @@
 
 </div>
 
-<?php get_footer();
+<?php get_footer(); ?>

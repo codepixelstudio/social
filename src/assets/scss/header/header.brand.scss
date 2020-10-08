@@ -4,7 +4,7 @@
     $brand : $g140;
 
     // rams.brand
-    #brand-rams {
+    #brand_rams {
 
         position: absolute;
 
@@ -52,7 +52,7 @@
         }
 
         // dark UI
-        .dark-ui & {
+        .dark_ui & {
 
             // svg
             .brand-icon {
@@ -69,15 +69,33 @@
         }
 
         // lite UI
-        .lite-ui & {
+        .lite_ui & {
 
             // svg
             .brand-icon {
 
+                // fill
                 .brand-fill {
 
                     fill: $g140;
                     fill-opacity: 1.000;
+
+                }
+
+                // stroke
+                .brand-stroke {
+
+                    fill: $gold;
+                    // stroke: $gold;
+
+                    // stroke-width: 0.09375rem;
+
+                }
+
+                // shapes
+                .brand-shapes {
+
+                    fill-opacity: 0.525;
 
                 }
 
@@ -114,7 +132,6 @@
             .brand-shapes {
 
                 fill: white;
-                fill-opacity: 0.925;
 
             }
 
@@ -123,7 +140,7 @@
     }
 
     // state.brand
-    #brand-state {
+    #brand_state {
 
         position: relative;
 
@@ -133,21 +150,35 @@
 
         height: 5rem;
 
-        padding: 1rem 0 1rem 0;
+        // padding: 1.125rem 0 1rem 0;
 
         text-decoration: none;
 
         // dark UI
-        .dark-ui & {
+        .dark_ui & {
 
-            @include color( white, 0.000 );
+            // text
+            #brand-state-text {
+
+                border-right: 1px solid transparentize( white, 0.000 );
+
+                @include color( white, 0.000 );
+
+            }
 
         }
 
         // lite UI
-        .lite-ui & {
+        .lite_ui & {
 
-            @include color( $g140, 0.000 );
+            // text
+            #brand-state-text {
+
+                border-right: 1px solid transparentize( $g140, 0.165 );
+
+                @include color( $g140, 0.000 );
+
+            }
 
         }
 
@@ -155,36 +186,45 @@
 
             @include flex-h-s-v-c( true );
 
-            height: 2rem;
+            // height: 2rem;
             margin: 0;
-            padding: 0 0.75rem 0 0;
+            padding: 0.1875rem 0.75rem 0 0;
 
-            @include font( $industry, 1.125rem, 700 );
+            @include font( $industry, 1.25rem, 700 );
 
             @include text( $up, left );
 
-            // linear
-            &.linear {
+            @include typo( 2rem, 0.025em );
 
-                height: 2rem;
+            // mobile
+            @include breakpoint ( medium down ) {
 
-                @include font( inherit, 1.25rem, 700 );
+                @include font( $industry, 1.125rem, 700 );
 
-                @include typo( 2rem, 0.025em );
+                @include text( $up, left );
 
-                // line break
-                br {
-
-                    @include hide;
-
-                }
+                @include typo( 1.1875rem, 0.015em );
 
             }
 
             // stack
             &.stack {
 
-                @include typo( 1.25rem, 0.025em );
+                //
+
+            }
+
+            // line break
+            br {
+
+                @include hide;
+
+                // mobile
+                @include breakpoint ( medium down ) {
+
+                    display: inline-block;
+
+                }
 
             }
 
@@ -217,6 +257,39 @@
                 }
 
             }
+
+        }
+
+    }
+
+    // local.brand
+    #brand_local {
+
+        position: relative;
+
+        @include flex-h-c-v-c( true );
+
+        height: 5rem;
+        padding: 1.125rem 1rem 1rem 1rem;
+
+        // @include font( $industry, 1rem, 700 );
+        @include font( $proxima, 1rem, 600 );
+
+        // @include text( $up );
+
+        @include typo( 0.75rem, 0.025em );
+
+        // dark UI
+        .dark_ui & {
+
+            @include color( white, 0.000 );
+
+        }
+
+        // lite UI
+        .lite_ui & {
+
+            @include color( $g140, 0.000 );
 
         }
 

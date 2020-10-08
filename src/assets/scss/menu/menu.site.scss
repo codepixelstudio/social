@@ -1,0 +1,106 @@
+// stylesheet :: site menu styles
+
+    // settings
+    $menu : 1rem;
+
+    // styles
+    #site_menu {
+
+        top: 5rem;
+
+        z-index: 100;
+
+        // @include flex-v-c-h-c( false );
+
+        height: calc( 100vh - 5rem );
+        padding: 2rem 2rem 2rem 2rem;
+
+        box-shadow: none;
+
+        @include fill( $midnite, 0.125 );
+
+        // @include fill( #DBDBDF, 0.000 );
+
+        @include gradient(
+
+            180deg,
+            transparent, 1.000, 0%,
+            // white, 0.765, 100%
+            $g140, 0.385, 100%
+
+        );
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            top: 4rem;
+
+            height: calc( 100vh - 4rem );
+
+        }
+
+        // header
+        .site_menu_header {
+
+            margin: 0 0 1rem 0;
+
+            // @include fill( red );
+
+            @include font( $industry, 0.6875rem, 700 );
+
+            @include text( $up );
+
+            @include typo( 0.5rem, 0.125em );
+
+            // @include color( $app05, 0.265 );
+            @include color( white, 0.465 );
+
+        }
+
+        // container
+        .site_menu_container {
+
+            // menu
+            .menu {
+
+                // item
+                li {
+
+                    margin: 0 0 1rem 0;
+
+                    // link
+                    a {
+
+                        @include flex-h-s-v-c( false );
+
+                        height: 2rem;
+                        padding: 0 0 0 0;
+
+                        // @include fill( red, 0.565 );
+
+                        @include font( $industry, 0.875rem, 600 );
+
+                        @include typo( 0.5625rem, 0.065em );
+
+                        @include color( white, 0.235 );
+
+                        transition: all 220ms $outex 0ms;
+
+                        // hover state
+                        &:hover {
+
+                            padding: 0 0 0 1rem;
+
+                            @include color( $gold );
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }

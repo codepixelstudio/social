@@ -4,10 +4,29 @@
     $footer : 1rem;
 
     // styles
-    .state-footer {
+    .state_footer {
 
-        @include fill( $g140, 0.000 );
+        // lite UI
+        &.lite_ui {
 
-        @include color( white, 0.000 );
+            position: relative;
+
+            z-index: 10;
+
+            // @include fill( $rite-lite, 0.765 );
+            @include fill( white );
+
+            @include color( $g140, 0.000 );
+
+        }
+
+        // lite UI
+        &.dark_ui {
+
+            @include fill( $g140, 0.000 );
+
+            @include color( white, 0.000 );
+
+        }
 
     }

@@ -1,0 +1,79 @@
+// stylesheet :: admin.ui stylesheet compiler
+
+    // variables + helpers
+    @import '../utilities/utilities';
+
+    // fonts
+    @import '../fonts/fonts';
+
+    // foundation
+    // @import '../framework/framework';
+
+
+    body,
+    #wpadminbar * {
+
+    	font-family: 'industrydemi';
+
+    }
+
+    body {
+
+        // @include fill( $app-canvas, 0.000 );
+
+    }
+
+    * {
+
+        border-radius: 0px !important;
+    	text-shadow: none !important;
+
+    }
+
+    input[type='radio'] {
+
+    	border-radius: 50% !important;
+
+    }
+
+    #adminmenuback,
+    #adminmenuwrap,
+    #adminmenu,
+    #adminmenu .wp-submenu,
+    #adminmenu .wp-not-current-submenu .wp-submenu,
+    .folded #adminmenu .wp-has-current-submenu .wp-submenu {
+
+    	width: 192px;
+
+    }
+
+    #adminmenu {
+
+    	margin: 0;
+
+    }
+
+    #adminmenu .wp-submenu {
+
+    	left: 192px;
+
+    }
+
+    #adminmenu a {
+
+    	font-size: 12px !important;
+
+    }
+
+    #wpcontent,
+    #wpfooter {
+
+    	margin: 0 0 0 192px;
+
+    }
+
+    #footer-left {
+
+    	display: none;
+
+    }

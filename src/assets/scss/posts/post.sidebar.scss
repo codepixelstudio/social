@@ -1,0 +1,120 @@
+// stylesheet :: post sidebar styles
+
+    // settings
+    $sidebar : 1rem;
+
+    // container
+    .main-container {
+
+        // grid
+        .main-grid {
+
+            // sidebar
+            .sidebar {
+
+                width: 100%;
+                margin: 0 0 0 0;
+                padding: 0 5rem 4rem 5rem;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    padding: 0 2rem 2rem 2rem;
+
+                }
+
+                // popular posts
+                .popular-posts {
+
+                    // title
+                    h6 {
+
+                        margin: 0 0 1rem 0;
+
+                    }
+
+                    // list
+                    .post-list {
+
+                        @include flex-h-j-v-c( false );
+
+                        // height: 16rem;
+                        margin: 0 0 0 0;
+                        padding: 2rem 2rem 2rem 2rem;
+                        padding: 0 0 0 0;
+
+                        list-style: none;
+
+                        // mobile
+                        @include breakpoint ( medium down ) {
+
+                            @include flex-h-j-v-c( false );
+
+                            flex-wrap: wrap;
+
+                            height: auto;
+
+                        }
+
+                        // items
+                        li {
+
+                            @include flex-h-s-v-t( true );
+
+                            width: 25%;
+                            margin: 0 0 1rem 0;
+                            // padding: 0 1rem 0 1rem;
+
+                            // mobile
+                            @include breakpoint ( medium down ) {
+
+                                width: 50%;
+                                margin: 0 0 1rem 0;
+
+                            }
+
+                            // mobile
+                            @include breakpoint ( small only ) {
+
+                                width: 100%;
+                                padding: 0 0 0 0;
+
+                                // last child
+                                &:last-child {
+
+                                    margin: 0 0 0 0;
+
+                                }
+
+                            }
+
+                            // thumbnail
+                            .thumbnail_container {
+
+                                width: 5rem;
+                                height: 5rem;
+                                // margin: 0 1rem 0 0;
+
+                            }
+
+                            // item
+                            .post_item {
+
+                                width: calc( 100% - 5rem );
+                                padding: 0 1rem 0 1rem;
+
+                                @include font( $industry, 0.75rem, 700 );
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }

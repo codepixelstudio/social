@@ -1,16 +1,19 @@
+
 <?php get_header(); ?>
 
 <div class="main-container">
 
 	<div class="main-grid">
 
-		<main class="main-content">
+		<main class="the_content">
 
-		<?php if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'components/content/content.base', get_post_format() ); ?>
+				<?php // get_template_part( 'components/content/content.base', get_post_format() ); ?>
+
+				<?php get_template_part( 'components/content/content.home', get_post_format() ); ?>
 
 			<?php endwhile; ?>
 

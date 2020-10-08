@@ -1,8 +1,8 @@
 
 <!-- brand.state -->
-<a href="https://www.colostate.edu/" id="brand-state" class="brand-link">
+<a href="https://www.colostate.edu/" id="brand_state" class="brand-link">
 
-    <h1 id="brand-state-text" class="stack">
+    <h1 id="brand-state-text" class="linear">
 
         <!-- desktop -->
         <span class="desktop">

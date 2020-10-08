@@ -1,10 +1,13 @@
 
+<!-- post -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header>
+	<!-- header -->
+	<header class="post-header">
 
 		<?php
 
+			// test for archive or single post
 			if ( is_single() ) {
 
 				the_title( '<h1 class="entry-title">', '</h1>' );
@@ -15,21 +18,54 @@
 
 			}
 
+			// get custom subheadline
+			echo '<span class="subheadline">' . get_field( 'post_subheadline' ) . '</span>';
+
 		?>
 
-		<?php foundationpress_entry_meta(); ?>
+		<!-- meta -->
+		<div class="post-meta">
+
+			<?php
+
+				// setup author avatar
+				$author  = get_the_author_meta( 'ID' );
+				$avatar  = get_avatar( $author );
+
+				// render avatar
+				echo '<a class="avatar" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">' . $avatar . '</a>';
+
+			?>
+
+			<!-- metadata -->
+			<div class="metadata">
+
+				<?php
+
+					// render post meta
+					foundationpress_entry_meta();
+
+				?>
+
+			</div>
+			<!-- END metadata -->
+
+		</div>
+		<!-- END meta -->
 
 	</header>
+	<!-- END header -->
 
+	<!-- content -->
 	<div class="entry-content">
 
 		<?php the_content(); ?>
 
-		<?php edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
-
 	</div>
+	<!-- END content -->
 
-	<footer>
+	<!-- footer -->
+	<footer class="post-footer">
 
 		<?php
 
@@ -44,10 +80,13 @@
 
 			);
 
+			// render tags
+			$tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php }
+
 		?>
 
-		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
-
 	</footer>
+	<!-- END footer -->
 
 </article>
+<!-- END post -->

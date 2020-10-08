@@ -1,12 +1,22 @@
-<?php
-/**
- * Clean up WordPress defaults
- *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
- */
+<?php // cleanup WP defaults
 
-if ( ! function_exists( 'foundationpress_start_cleanup' ) ) :
+// remove pages from admin
+function remove_admin_pages() {
+
+	// comments
+	remove_menu_page( 'edit-comments.php' );
+
+	// tools
+	// remove_menu_page( 'tools.php' );
+
+}
+
+// action reference
+add_action( 'admin_menu', 'remove_admin_pages' );
+
+// start cleanup functions
+if ( ! function_exists( 'foundationpress_start_cleanup' ) ) {
+
 	function foundationpress_start_cleanup() {
 
 		// Launching operation cleanup.
@@ -22,13 +32,12 @@ if ( ! function_exists( 'foundationpress_start_cleanup' ) ) :
 		add_action( 'wp_head', 'foundationpress_remove_recent_comments_style', 1 );
 
 	}
-	add_action( 'after_setup_theme', 'foundationpress_start_cleanup' );
-endif;
-/**
- * Clean up head.+
- * ----------------------------------------------------------------------------
- */
 
+	add_action( 'after_setup_theme', 'foundationpress_start_cleanup' );
+
+}
+
+// cleanup <head>
 if ( ! function_exists( 'foundationpress_cleanup_head' ) ) :
 	function foundationpress_cleanup_head() {
 
@@ -73,14 +82,14 @@ if ( ! function_exists( 'foundationpress_cleanup_head' ) ) :
 	}
 endif;
 
-// Remove WP version from RSS.
+// remove WP version from RSS
 if ( ! function_exists( 'foundationpress_remove_rss_version' ) ) :
 	function foundationpress_remove_rss_version() {
 		return '';
 	}
 endif;
 
-// Remove injected CSS for recent comments widget.
+// remove injected CSS for recent comments widget
 if ( ! function_exists( 'foundationpress_remove_wp_widget_recent_comments_style' ) ) :
 	function foundationpress_remove_wp_widget_recent_comments_style() {
 		if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
@@ -89,7 +98,7 @@ if ( ! function_exists( 'foundationpress_remove_wp_widget_recent_comments_style'
 	}
 endif;
 
-// Remove injected CSS from recent comments widget.
+// remove injected CSS from recent comments widget
 if ( ! function_exists( 'foundationpress_remove_recent_comments_style' ) ) :
 	function foundationpress_remove_recent_comments_style() {
 		global $wp_widget_factory;

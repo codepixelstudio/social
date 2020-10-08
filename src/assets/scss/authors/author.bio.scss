@@ -1,0 +1,197 @@
+// stylesheet :: blog/homepage post styles
+
+    // settings
+    $post : 1rem;
+
+    // container
+    .main-container {
+
+        // body class
+        .author & {
+
+            @include flex-v-t-h-c( false );
+
+            max-width: none;
+            padding: 0 0 0 0;
+
+            // grid
+            .main-grid {
+
+                // @include flex-v-t-h-c( false );
+                display: block;
+
+                margin: 0 0 0 0;
+
+            }
+
+            // author bio
+            .author_bio_content {
+
+                width: 100vw;
+                padding: 5rem 5rem 5rem 5rem;
+
+                // mobile
+                @include breakpoint ( large down ) {
+
+                    padding: 3rem 3rem 3rem 3rem;
+
+                }
+
+                // mobile
+                @include breakpoint ( small only  ) {
+
+                    padding: 2rem 2rem 2rem 2rem;
+
+                }
+
+                // grid
+                .author_bio_grid {
+
+                    @include flex-h-j-v-s( false );
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        @include flex-v-t-h-s( false );
+
+                    }
+
+                    // image
+                    .author_bio_image {
+
+                        width: 40%;
+                        height: 60vh;
+
+                        background: {
+
+                            repeat: no-repeat;
+                            size: cover;
+                            position: center top;
+
+                        }
+
+                        // mobile
+                        @include breakpoint ( large down ) {
+
+                            height: 75vh;
+
+                        }
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            width: 100%;
+
+                        }
+
+                    }
+
+                    // content
+                    .author_bio {
+
+                        @include flex-v-j-h-st( false );
+
+                        width: 60%;
+                        padding: 0 0 0 3rem;
+
+                        @include color( $new_blue );
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            width: 100%;
+                            padding: 0 0 0 0;
+
+                        }
+
+                        // container
+                        .entry_container {
+
+                            @include flex-h-j-v-s( false );
+
+                            flex-wrap: wrap;
+
+                            margin: 0 0 0 0;
+
+                            // entry
+                            .bio_entry {
+
+                                width: 50%;
+                                margin: 0 0 1rem 0;
+
+                            }
+
+                        }
+
+                        // entry
+                        .bio_entry {
+
+                            // email
+                            &.email {
+
+                                margin: 1rem 0 0 0;
+
+                            }
+
+                        }
+
+                        // label
+                        .entry_label {
+
+                            display: block;
+
+                            margin: 0 0 0.5rem 0;
+
+                            @include font( 'Oswald', 1.25rem, 500 );
+
+                            @include text( $up );
+
+                            @include typo( 1rem, 0.000em );
+
+                            @include color( $roarange, 0.000 );
+
+                        }
+
+                        // text
+                        .entry_text {
+
+                            display: block;
+
+                            @include font( $industry, 0.875rem, 600 );
+
+                        }
+
+                    }
+
+                }
+
+                // heading
+                h1 {
+
+                    margin: 0 0 3rem 0;
+                    padding: 2rem 0 0 0;
+
+                    border-top: 2px solid $roarange;
+
+                    @include font( 'Oswald', 3rem, 500 );
+
+                    @include text( $up );
+
+                    @include typo( 2.5rem, 0.000em );
+
+                    @include color( $new_blue, 0.000 );
+
+                }
+
+                // posts
+                .author_posts {
+
+                    @include hide;
+
+                }
+
+            }
+
+        }
+
+    }

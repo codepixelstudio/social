@@ -1,0 +1,329 @@
+// stylesheet :: social media icon styles
+
+    // settings
+    $social_button : 2rem;
+
+    // styles
+    #social_icons {
+
+        position: absolute;
+
+        top: 0;
+        right: 5rem;
+        bottom: 0;
+
+        height: 5rem;
+        padding: 1.5rem 1.5rem 1.5rem 0;
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            @include hide;
+
+        }
+
+        .button {
+
+            position: relative;
+
+            @include flex-v-c-h-c( true );
+
+            width: $social_button;
+            height: $social_button;
+            margin: 0 0 0 0;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+            border: none;
+
+            @include fill( white, 1.000 );
+
+            transition: $all220;
+
+            &:hover,
+            &:focus,
+            &:active {
+
+                outline: none;
+
+                // @include fill( $g140, 0.000 );
+
+                svg {
+
+                    path,
+                    circle {
+
+                        fill: white;
+                        fill-opacity: 1.000;
+
+                    }
+
+                }
+
+            }
+
+            &:first-child {
+
+                margin-left: 0;
+
+            }
+
+            &:last-child {
+
+                margin-right: 0;
+
+            }
+
+            svg {
+
+                width: 1rem;
+                height: 1rem;
+
+                path,
+                circle {
+
+                    // fill: $g140;
+                    fill: white;
+                    fill-opacity: 1.000;
+
+                    transition: $all220;
+
+                }
+
+            }
+
+            // label
+            .link-label {
+
+                position: absolute;
+
+                visibility: hidden;
+
+            }
+
+            &.facebook {
+
+                &:hover,
+                &:focus,
+                &:active {
+
+                    @include fill( $facebook, 0.115 );
+
+                }
+
+            }
+
+            &.twitter {
+
+                &:hover,
+                &:focus,
+                &:active {
+
+                    @include fill( $twitter, 0.085 );
+
+                }
+
+            }
+
+            &.linkedin {
+
+                &:hover,
+                &:focus,
+                &:active {
+
+                    @include fill( $linkedin, 0.105 );
+
+                }
+
+            }
+
+            &.instagram {
+
+                &:hover,
+                &:focus,
+                &:active {
+
+                    // @include fill( white, 1.000 );
+
+                    &:before {
+
+                        opacity: 0.845;
+
+                    }
+
+                }
+
+                &:before {
+
+                    content: '';
+
+                    position: absolute;
+
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+
+                    z-index: 0;
+
+                    background: {
+
+						image: url(../img/icons/social/instagram.gradient.png);
+						repeat: no-repeat;
+						size: 64px 64px;
+						position: center center;
+
+					}
+
+                    opacity: 0.000;
+
+                    transition: $all220;
+
+                }
+
+                svg {
+
+                    position: relative;
+
+                    z-index: 10;
+
+                }
+
+            }
+
+            &.pinterest {
+
+                &:hover,
+                &:focus,
+                &:active {
+
+                    @include fill( $pinterest, 0.125 );
+
+                }
+
+            }
+
+            &.youtube {
+
+                &:hover,
+                &:focus,
+                &:active {
+
+                    @include fill( $youtube, 0.165 );
+
+                }
+
+            }
+
+            &.flickr {
+
+                @include hide;
+
+				&:before,
+				&:after {
+
+					content: '';
+
+					position: absolute;
+
+					top: 16px;
+					bottom: 16px;
+
+					z-index: 1;
+
+					display: block;
+
+					width: 8px;
+					height: 8px;
+					margin: 0;
+					padding: 0;
+
+					border-radius: 4px;
+
+					transition: $all220;
+
+					@include breakpoint(medium down) {
+
+						top: 14px;
+						bottom: 14px;
+
+						width: 6px;
+						height: 6px;
+
+						border-radius: 3px;
+
+					}
+
+				}
+
+				&:before {
+
+					left: 11px;
+
+					background: {
+
+						color: transparentize(white, 0.765);
+
+					}
+
+					@include breakpoint(medium down) {
+
+						left: 10px;
+
+					}
+
+				}
+
+				&:after {
+
+					right: 11px;
+
+					background: {
+
+						color: transparentize(white, 0.485);
+
+					}
+
+					@include breakpoint(medium down) {
+
+						right: 10px;
+
+					}
+
+				}
+
+				&:focus,
+				&:hover {
+
+					background: {
+
+						color: transparentize(white, 0.315);
+
+					}
+
+					&:before {
+
+						background: {
+
+							color: $blickr;
+
+						}
+
+					}
+
+					&:after {
+
+						background: {
+
+							color: $plickr;
+
+						}
+
+					}
+
+				}
+
+			}
+
+        }
+
+    }

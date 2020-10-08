@@ -153,6 +153,53 @@
 
     }
 
+    // compile SCSS
+    function admin() {
+
+        return gulp.src( 'src/assets/scss/admin/state.ui.admin.scss' )
+
+            .pipe( $.sourcemaps.init() )
+
+            .pipe( $.sass( {
+
+                includePaths : PATHS.sass
+
+            } ).on( 'error', $.sass.logError ) )
+
+            .pipe( $.sourcemaps.write() )
+
+            .pipe( $.autoprefixer( {
+
+                browsers : COMPATIBILITY
+
+            } ) )
+
+            .pipe( $.if( PRODUCTION,
+
+                $.cleanCss( { compatibility: 'ie9' } )
+
+            ) )
+
+            .pipe( gulp.dest( PATHS.site + '/assets/css' ) )
+
+            .pipe( notify({
+
+                title: 'compiled',
+                message: '<%= file.relative %> : <%= options.timestamp %>',
+                onLast: true,
+                icon: path.join( __dirname, notifycon_scss ),
+                templateOptions: {
+
+                    timestamp: timestamp
+
+                }
+
+            } ) )
+
+            .pipe( browser.reload( { stream: true } ) );
+
+    }
+
     // webpack
     const webpack = {
 
@@ -439,6 +486,16 @@
 
                 'file ' + colors.bold( colors.magenta( path ) ) + ' was removed' ) );
 
+        gulp.watch( 'src/assets/scss/**/*.scss', admin, reload )
+
+            .on( 'change', path => log(
+
+                'file ' + colors.bold( colors.magenta( path ) ) + ' changed' ) )
+
+            .on( 'unlink', path => log(
+
+                'file ' + colors.bold( colors.magenta( path ) ) + ' was removed' ) );
+
         gulp.watch( '**/*.php', reload )
 
             .on( 'change', path => log(
@@ -480,6 +537,7 @@
             gulp.parallel(
 
                 sass,
+                admin,
                 'webpack:build',
                 images,
                 copy,
