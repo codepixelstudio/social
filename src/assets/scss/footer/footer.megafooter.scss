@@ -1,33 +1,187 @@
 // stylesheet :: footer menu elements
 
     // settings
-    $footer : $g140;
+    $megafooter : #284F3E;
 
     // megafooter
     .megafooter {
 
-        @include flex-v-c-h-c( false );
+        position: relative;
 
         min-height: 16rem;
-        padding: 5rem 5rem 5rem 5rem;
+        padding: 5rem 20rem 3rem 5rem;
 
         @include font( inherit, 0.75rem, 500 );
+
+        @include fill( $megafooter, 0.000 );
 
         background: {
 
             image: url(../img/layout/layout.footer.png);
             repeat: no-repeat;
             size: cover;
-            position: center center;
+            position: -15vw center;
+
+        }
+
+        // mobile
+        @include breakpoint ( large down ) {
+
+            padding-right: 12rem;
+
+            background: {
+
+                position: -40vw center;
+
+            }
+
+        }
+
+        // mobile
+        @include breakpoint ( medium down ) {
+
+            background: {
+
+                position: -125vw center;
+
+            }
 
         }
 
         // mobile
         @include breakpoint ( small only ) {
 
+            padding: 3rem 8rem 2rem 3rem;
+
             background: {
 
-                position: -70vh center;
+                position: -310vw center;
+
+            }
+
+            // after
+            &:after {
+
+                content: '';
+
+                position: absolute;
+
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                z-index: 10;
+
+                @include fill( $megafooter, 0.485 );
+
+            }
+
+        }
+
+        // container
+        .megafooter_container {
+
+            position: relative;
+
+            z-index: 20;
+
+            // heading
+            h3 {
+
+                margin: 0 0 2rem 0;
+
+                @include font( $industry, 1.25rem, 700 );
+
+                @include color( $gold );
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    margin: 0 0 1rem 0;
+
+                    @include font( $industry, 1rem, 700 );
+
+                }
+
+            }
+
+        }
+
+        // menu container
+        .megafooter_menu {
+
+            @include flex-h-s-v-t( false );
+
+            flex-wrap: wrap;
+
+            margin: 0 0 0 0;
+
+            list-style: none;
+
+            // list item
+            li {
+
+                @include flex-h-c-v-c( true );
+
+                width: calc( 33.3333333% - 2rem );
+                height: 4rem;
+                margin: 0 2rem 2rem 0;
+
+                // mobile
+                @include breakpoint ( medium down ) {
+
+                    width: calc( 50% - 2rem );
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    width: 100%;
+                    height: 3rem;
+                    margin: 0 0 1rem 0;
+
+                }
+
+            }
+
+            // link
+            a {
+
+                @include flex-h-c-v-c( true );
+
+                width: 100%;
+                height: 100%;
+                padding: 0 1.25rem 0 1.25rem;
+
+                @include font( $industry, 0.75rem, 700 );
+
+                @include text( none, center );
+
+                @include color( white );
+
+                @include fill( lighten( $megafooter, 5% ), 0.065 );
+
+                @include shadowbox( 1rem, 3rem, black, 0.685 );
+
+                transition: $all220;
+
+                // hover state
+                &:hover {
+
+                    // @include color( $gold );
+
+                    @include fill( darken( $roarange, 7.5% ) );
+
+                }
+
+                // mobile
+                @include breakpoint ( large down ) {
+
+                    @include font( $industry, 0.6875rem, 600 );
+
+                }
 
             }
 

@@ -60,6 +60,13 @@
 
                 @include color( white, 0.000 );
 
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include color( white, 0.385 );
+
+                }
+
             }
 
         }
@@ -141,12 +148,20 @@
         // links
         .link-list {
 
-            display: flex;
+            @include flex-h-c-v-c( false );
+
             flex-wrap: wrap;
 
             margin: 0 0 0 0;
 
             list-style: none;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                margin: 0 0 1rem 0;
+
+            }
 
             &-item {
 
@@ -159,13 +174,18 @@
 
                 @include typo( 1.5rem, inherit );
 
-                @include bpoint( tablet ) {
+                // mobile
+                @include breakpoint ( small only  ) {
 
-                    // margin-bottom: .25rem;
+                    padding: 0 0 0 0.5rem;
 
-                    // padding-right: 0.75rem;
+                    // pipes
+                    &:before,
+                    &:after {
 
-                    // font-size: .625rem;
+                        @include hide;
+
+                    }
 
                 }
 
@@ -182,10 +202,53 @@
 
                     @include color( white, 0.000 );
 
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        @include hide;
+
+                    }
+
+                }
+
+                // first child
+                &:first-child {
+
+                    // before
+                    &:before {
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            // @include hide;
+
+                        }
+
+                    }
+
                 }
 
                 // last child
                 &:last-child {
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        // padding: 0 0 0 0;
+
+                    }
+
+                    // before
+                    &:before {
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            // @include hide;
+
+                        }
+
+                    }
 
                     // after
                     &:after {
@@ -240,6 +303,43 @@
             @include font( $industry, 0.625rem, 700 );
 
             @include typo( 1, 0.065em );
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                @include text( normal, center );
+
+                @include typo( 1rem, 0.065em );
+
+                @include color( white, 0.385 );
+
+            }
+
+            // line break
+            .mobile {
+
+                @include hide;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    display: block;
+
+                }
+
+            }
+
+            // dash
+            .dash {
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include hide;
+
+                }
+
+            }
 
         }
 

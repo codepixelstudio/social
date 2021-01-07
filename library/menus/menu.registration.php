@@ -5,7 +5,8 @@
 
 		array(
 
-			'site-menu-panel'       => __( 'Site Main Menu', 'social' )
+			'site-menu-panel'       => __( 'Site Main Menu', 'social' ),
+			'footer-menu' 			=> __( 'Footer Menu', 'social' )
 
 		)
 
@@ -29,6 +30,26 @@
 	        'depth' => 5,
 	        'fallback_cb' => false,
 	        'walker' => new Off_Canvas_Menu_Walker(),
+
+	    ));
+
+	}
+
+	// footer menu
+	function social_footer_menu() {
+
+	    wp_nav_menu( array(
+
+	        'container' 		=> false,
+	        'container_class' 	=> '',
+	        'menu' 				=> '',
+	        'menu_class' 		=> 'megafooter_menu',
+	        'theme_location' 	=> 'footer-menu',
+	        'before' 			=> '',
+	        'after' 			=> '',
+	        'link_before' 		=> '',
+	        'link_after' 		=> '',
+	        'fallback_cb' 		=> false,
 
 	    ));
 

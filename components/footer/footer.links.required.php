@@ -75,7 +75,7 @@
     <!-- END links -->
 
     <!-- copyright -->
-    <p class="copyright">Copyright <span class="symbol">&copy;</span> <?php echo date('Y'); ?> Colorado State University - All rights reserved.</p>
+    <p class="copyright">Copyright <span class="symbol">&copy;</span> <?php echo date('Y'); ?> Colorado State University<span class="dash"> - </span><br class="mobile" />All rights reserved.</p>
     <!-- END copyright -->
 
 </div>
