@@ -37,12 +37,32 @@
                 margin: 0 0 0 0;
                 padding: 0 0 0 0;
 
+                transition: $all220;
+
+            }
+
+            // link
+            a {
+
+                // hover state
+                &:hover {
+
+                    @include color( white );
+
+                    @include fill( $g140 );
+
+                    @include shadowbox( 1rem, 3rem, black, 0.645 );
+
+                }
+
             }
 
             // span
             .current {
 
                 padding: 0 0 0 0;
+
+                @include shadowbox( 1rem, 3rem, black, 0.645 );
 
             }
 
