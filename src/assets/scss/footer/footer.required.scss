@@ -27,7 +27,7 @@
         .dark_ui & {
 
             @include fill( $g135, 0.000 );
-            @include fill( darken( #284f3e, 5% ) );
+            @include fill( darken( #284F3E, 5% ) );
 
             // @include shadowbox( -0.5rem, 2rem, black, 0.785 );
 

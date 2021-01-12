@@ -153,11 +153,13 @@
 
                 width: 100%;
                 height: 100%;
-                padding: 0 1.25rem 0 1.25rem;
+                padding: 0.125rem 1.25rem 0 1.25rem;
 
                 @include font( $industry, 0.75rem, 700 );
 
                 @include text( none, center );
+
+                @include typo( 0.5rem, 0.000em );
 
                 @include color( white );
 
