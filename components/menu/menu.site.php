@@ -22,5 +22,34 @@
     </div>
     <!-- END container -->
 
+    <!-- newsletter signup -->
+    <div class="newsletter_signup">
+
+        <!-- form -->
+        <form id="newsletter_signup_form">
+
+            <!-- field container -->
+            <div class="form_fields">
+
+                <!-- input wrap -->
+                <div class="input_wrap">
+
+                    <label for="email">e-mail address</label>
+                    <input id="email" class="text_input" type="email" name="email" value="" placeholder="e-mail address">
+
+                </div>
+                <!-- END input wrap -->
+
+                <input type="submit" name="" value="subscribe">
+
+            </div>
+            <!-- END field container -->
+
+        </form>
+        <!-- END form -->
+
+    </div>
+    <!-- END newsletter signup -->
+
 </div>
 <!-- END menu.site -->

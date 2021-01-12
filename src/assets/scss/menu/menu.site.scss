@@ -19,8 +19,6 @@
 
         @include fill( $midnite, 0.125 );
 
-        // @include fill( #DBDBDF, 0.000 );
-
         @include gradient(
 
             180deg,
@@ -52,8 +50,7 @@
 
             @include typo( 0.5rem, 0.125em );
 
-            // @include color( $app05, 0.265 );
-            @include color( white, 0.465 );
+            @include color( $gold, 0.000 );
 
         }
 
@@ -67,6 +64,18 @@
                 li {
 
                     margin: 0 0 1rem 0;
+
+                    // current item
+                    &.current-menu-item {
+
+                        // link
+                        a {
+
+                            @include fill( transparent );
+
+                        }
+
+                    }
 
                     // link
                     a {
@@ -89,11 +98,152 @@
                         // hover state
                         &:hover {
 
-                            padding: 0 0 0 1rem;
+                            padding: 0 0 0 0.5rem;
 
-                            @include color( $gold );
+                            @include color( $roarange );
 
                         }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        // newsletter
+        .newsletter_signup {
+
+            position: absolute;
+
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            z-index: 10;
+
+            padding: 2rem 2rem 2rem 2rem;
+
+        }
+
+        // form
+        #newsletter_signup_form {
+
+            // position: relative;
+
+            // fields
+            .form_fields {
+
+                // position: relative;
+
+                @include flex-h-j-v-c( false );
+
+                height: 3rem;
+
+                // wrapper
+                .input_wrap {
+
+                    position: relative;
+
+                    width: 100%;
+
+                }
+
+                // common
+                input {
+
+                    border: none;
+
+                }
+
+                // label
+                label {
+
+                    position: absolute;
+
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+
+                    z-index: 100;
+
+                    width: 3rem;
+                    height: 3rem;
+                    margin: 0 0 0 0;
+                    padding: 0 0 0 0;
+
+                    overflow: hidden;
+
+                    text-indent: -999rem;
+
+                    // after
+                    &:after {
+
+                        @include codicon( 3rem, 3rem, 1rem, 1rem, $gold, '\EA2F' );
+
+                        position: absolute;
+
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        z-index: 10;
+
+                        text-indent: 0;
+
+                    }
+
+                }
+
+                // text
+                input[ type='email' ] {
+
+                    height: 3rem;
+                    margin: 0;
+                    padding: 0 0 0 3rem;
+
+                    @include font( $industry, 0.75rem, 600 );
+
+                    @include color( white );
+
+                    @include fill( $midnite, 0.765 );
+
+                }
+
+                // placeholder
+                ::placeholder {
+
+                    // @include font( $industry, 0.75rem, 600 );
+
+                    @include color( white, 0.485 );
+
+                }
+
+                // submit
+                input[ type='submit' ] {
+
+                    height: 3rem;
+                    margin: 0 0 0 0;
+                    padding: 0.0625rem 1rem 0 1rem;
+
+                    @include font( $industry, 0.6875rem, 600 );
+
+                    @include typo( 0.6875rem, 0.035em );
+
+                    @include color( white );
+
+                    @include fill( $g140 );
+
+                    transition: $all220;
+
+                    // hover state
+                    &:hover {
+
+                        @include fill( darken( $roarange, 7.5% ) );
+
+                        cursor: pointer;
 
                     }
 
