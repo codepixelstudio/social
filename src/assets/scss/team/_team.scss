@@ -21,6 +21,7 @@
             // content
             .the_content {
 
+                width: 100%;
                 padding: 5rem 5rem 5rem 5rem;
 
                 // mobile
@@ -38,9 +39,11 @@
                     margin: 0 0 5rem 0;
 
                     // mobile
-                    @include breakpoint ( small only ) {
+                    @include breakpoint ( medium down ) {
 
                         @include flex-v-t-h-st( false );
+
+                        margin: 0 0 3rem 0;
 
                     }
 
@@ -81,9 +84,16 @@
                         @include color( $new_blue, 0.000 );
 
                         // mobile
-                        @include breakpoint ( small only ) {
+                        @include breakpoint ( medium down ) {
 
                             margin: 2rem 0 0 0;
+
+                        }
+
+                        // p
+                        p {
+
+                            margin: 0 0 0 0;
 
                         }
 
@@ -91,7 +101,7 @@
 
                 }
 
-                // bios1
+                // bios
                 .page_bios {
 
                     display: grid;
@@ -100,12 +110,21 @@
 
                     grid-gap: 2rem;
 
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        grid-template-columns: calc( 50% - 1rem ) calc( 50% - 1rem );
+
+                    }
+
                 }
 
                 // links
                 .bio_link {
 
                     position: relative;
+
+                    z-index: 0;
 
                     @include flex-v-b-h-c( false );
 
@@ -114,6 +133,21 @@
                     // @include fill( red, 0.685 );
 
                     @include color( white, 0.000 );
+
+                    background: {
+
+                        repeat: no-repeat;
+                        size: cover;
+                        position: center center;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        height: 20rem;
+
+                    }
 
                     // hover state
                     &:hover {
@@ -142,57 +176,10 @@
 
                     }
 
-                    // orange
-                    &.orange {
+                    // after
+                    &:after {
 
-                        // after
-                        &:after {
-
-                            @include fill( $roarange, 0.000 );
-
-                        }
-
-                        .tag {
-
-                            @include fill( $roarange, 0.000 );
-
-                        }
-
-                    }
-
-                    // yellow
-                    &.yellow {
-
-                        // after
-                        &:after {
-
-                            @include fill( $campaign, 0.000 );
-
-                        }
-
-                        .tag {
-
-                            @include fill( $campaign, 0.000 );
-
-                        }
-
-                    }
-
-                    // blue
-                    &.blue {
-
-                        // after
-                        &:after {
-
-                            @include fill( $blue, 0.000 );
-
-                        }
-
-                        .tag {
-
-                            @include fill( $blue, 0.000 );
-
-                        }
+                        @include fill( $roarange, 0.000 );
 
                     }
 
@@ -205,9 +192,13 @@
                         // padding: 2rem 2rem 2rem 2rem;
                         padding: 1rem 1rem 1rem 1rem;
 
-                        .blue & {
+                        @include fill( darken( $roarange, 7.5% ), 0.165 );
+                        @include fill( $dark, 0.085 );
 
+                        // mobile
+                        @include breakpoint ( small only ) {
 
+                            width: 100%;
 
                         }
 
@@ -221,15 +212,35 @@
 
                         display: block;
 
-                        @include font( $industry, 1rem, 600 );
+                        @include font( $industry, 0.875rem, 600 );
 
-                        @include text( $up );
+                        @include typo( 1rem, 0.035em );
 
                         text-align: center;
 
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            @include font( $industry, 0.6875rem, 600 );
+
+                        }
+
                         &.title {
 
-                            @include font( 'Oswald', 0.75rem, 400 );
+                            @include font( $industry, 0.6875rem, 600 );
+
+                            @include text( $up, center );
+
+                            @include typo( 1rem, 0.045em );
+
+                            @include color( $gold );
+
+                            // mobile
+                            @include breakpoint ( small only ) {
+
+                                @include font( $industry, 0.625rem, 700 );
+
+                            }
 
                         }
 
@@ -256,15 +267,6 @@
                     &:before {
 
                         z-index: 10;
-
-                        background: {
-
-                            image: url(../img/giroud.jpg);
-                            repeat: no-repeat;
-                            size: cover;
-                            position: top center;
-
-                        }
 
                         opacity: 0.365;
 

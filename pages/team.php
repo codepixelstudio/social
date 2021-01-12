@@ -2,13 +2,19 @@
 
 <?php get_header(); ?>
 
+<!-- container -->
 <div class="main-container">
 
+	<!-- grid -->
 	<div class="main-grid">
 
+		<?php while ( have_posts() ) : the_post(); ?>
+
+		<!-- content -->
 		<main class="the_content">
 
-            <div class="page_header">
+			<!-- header -->
+            <header class="page_header">
 
                 <span class="styled_heading">
 
@@ -19,159 +25,74 @@
 
                 <span class="styled_text">
 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <?php the_content(); ?>
 
                 </span>
 
-            </div>
+            </header>
+			<!-- END header -->
 
-			<?php $authors = wp_list_authors(
+			<?php
 
-				array(
+				// $authors = get_users( [ 'role__in' => [ 'author' ] ] );
+				$authors = get_users();
 
-					'show_fullname' => 1,
-					'optioncount'   => 1,
-					'feed_image'    => '',
-					'echo'			=> false
+			?>
 
-				)
+			<pre class="developer hide">
 
-			); ?>
-
-			<pre>
-
-				<?php print_r( $authors ); ?>
+				<?php  print_r( $authors ); ?>
 
 			</pre>
 
-            <div class="page_bios" style="display:none;">
+			<!-- bio grid -->
+            <div class="page_bios">
 
-                <a href="#" class="bio_link orange">
+			<?php foreach ( $authors as $author ) {
 
-                    <div class="tag">
+				$author_bio  	 = $author->data->user_nicename;
+				$author_name 	 = $author->data->display_name;
+				$author_data 	 = get_user_meta( $author->ID );
+				$author_metadata = get_field( 'author_meta', 'user_' . $author->ID );
 
-                        <span class="name">
+				echo '<div class="bio_block">
 
-                            devin koncar
+					<a class="bio_link" href="' . get_site_url() . '/author/' . $author_bio . '" style="background-image:url(' . $author_metadata[ 'bio_picture' ] . ');">
 
-                        </span>
+						<div class="tag">
 
-                        <span class="title blue">
+							<span class="name">
 
-                            some title goes here
+								' . $author_name . '
 
-                        </span>
+							</span>
 
-                    </div>
+							<span class="title">
 
-                </a>
+								' . $author_metadata[ 'role' ] . '
 
-                <a href="#" class="bio_link yellow">
+							</span>
 
-                    <div class="tag">
+						</div>
 
-                        <span class="name">
+					</a>
 
-                            devin koncar
+				</div>';
 
-                        </span>
-
-                        <span class="title">
-
-                            some title goes here
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="#" class="bio_link blue">
-
-                    <div class="tag">
-
-                        <span class="name">
-
-                            devin koncar
-
-                        </span>
-
-                        <span class="title">
-
-                            some title goes here
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="#" class="bio_link yellow">
-
-                    <div class="tag">
-
-                        <span class="name">
-
-                            devin koncar
-
-                        </span>
-
-                        <span class="title">
-
-                            some title goes here
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="#" class="bio_link blue">
-
-                    <div class="tag">
-
-                        <span class="name">
-
-                            devin koncar
-
-                        </span>
-
-                        <span class="title">
-
-                            some title goes here
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="#" class="bio_link orange">
-
-                    <div class="tag">
-
-                        <span class="name">
-
-                            devin koncar
-
-                        </span>
-
-                        <span class="title">
-
-                            some title goes here
-
-                        </span>
-
-                    </div>
-
-                </a>
+			} ?>
 
             </div>
+			<!-- END bio grid -->
 
 		</main>
+		<!-- END content -->
+
+		<?php endwhile; ?>
 
 	</div>
+	<!-- END grid -->
 
 </div>
+<!-- END container -->
 
 <?php get_footer(); ?>
