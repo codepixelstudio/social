@@ -71,10 +71,11 @@
 				// setup author avatar
 				$author  = get_the_author_meta( 'ID' );
 				$avatar  = get_avatar( $author );
+				$avatar  = get_field( 'author_meta', 'user_' . $author );
 
 				// render avatar
 				// echo '<a class="avatar" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">' . $avatar . '</a>';
-				echo '<a class="avatar" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . $avatar . '</a>';
+				echo '<a class="avatar" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" style="background-image:url(' . $avatar[ 'avatar_picture' ] . ')"></a>';
 
 				// esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) )
 
