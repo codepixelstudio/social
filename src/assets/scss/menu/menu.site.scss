@@ -125,6 +125,21 @@
 
             padding: 2rem 2rem 2rem 2rem;
 
+            // text
+            .newsletter_signup_text {
+
+                display: block;
+
+                margin: 0 0 0.5rem 0;
+
+                @include font( $industry, 0.6875rem, 700, italic );
+
+                @include typo( 1rem, 0.035em );
+
+                @include color( white, 0.165 );
+
+            }
+
         }
 
         // form
@@ -180,7 +195,7 @@
                     // after
                     &:after {
 
-                        @include codicon( 3rem, 3rem, 1rem, 1rem, $gold, '\EA2F' );
+                        @include codicon( 3rem, 3rem, 1rem, 1rem, $gold, '\EA30' );
 
                         position: absolute;
 
@@ -202,9 +217,12 @@
 
                     height: 3rem;
                     margin: 0;
+                    // padding: 0.0625rem 0 0 3rem;
                     padding: 0 0 0 3rem;
 
-                    @include font( $industry, 0.75rem, 600 );
+                    @include font( $industry, 0.875rem, 600 );
+
+                    @include typo( 1rem, 0.035em );
 
                     @include color( white );
 
@@ -215,9 +233,14 @@
                 // placeholder
                 ::placeholder {
 
-                    // @include font( $industry, 0.75rem, 600 );
+                    display: inline-block;
 
-                    @include color( white, 0.485 );
+                    margin: 0 0 0.0625rem 0;
+
+                    @include font( $industry, 0.75rem, 700, italic );
+                    @include font( $industry, 0.6875rem, 700, italic );
+
+                    @include color( white, 0.365 );
 
                 }
 

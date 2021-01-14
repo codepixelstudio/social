@@ -35,7 +35,7 @@
                 <div class="input_wrap">
 
                     <label for="email">e-mail address</label>
-                    <input id="email" class="text_input" type="email" name="email" value="" placeholder="e-mail address">
+                    <input id="email" class="text_input" type="email" name="email" value="" placeholder="subscribe to our newsletter">
 
                 </div>
                 <!-- END input wrap -->
