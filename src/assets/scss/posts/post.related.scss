@@ -1,0 +1,110 @@
+// stylesheet :: related posts styles
+
+    // settings
+    $related : 1rem;
+
+    // styles
+    .related_posts {
+
+        padding: 5rem 5rem 5rem 5rem;
+
+        @include color( white );
+
+        @include fill( lighten( $sidebar, 5% ), 0.000 );
+
+        // heading
+        h4 {
+
+            margin: 0 0 2rem 0;
+
+            @include font( $industry, 1.25rem, 700 );
+
+            @include color( $gold );
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                margin: 0 0 1rem 0;
+
+                @include font( $industry, 1rem, 700 );
+
+            }
+
+        }
+
+        // list
+        ul {
+
+            @include flex-h-j-v-t( false );
+
+            margin: 0 0 0 0;
+
+            list-style: none;
+
+            // list item
+            .related_posts_list_item {
+
+                width: calc( 25% - 1.3333333rem );
+                height: auto;
+
+                // link
+                .related_post_link {
+
+                    @include flex-v-t-h-st( false );
+                    @include flex-h-s-v-t( false );
+
+                    @include color( white, 0.215 );
+
+                    transition: $all220;
+
+                    // hover state
+                    &:hover {
+
+                        @include color( $roarange );
+
+                    }
+
+                    // common
+                    span {
+
+                        // display: inline-block;
+
+                    }
+
+                    // thumbnail
+                    .post_thumbnail {
+
+                        flex-grow: 1;
+
+                        width: 6rem;
+                        height: 6rem;
+                        margin: 0 1rem 0 0;
+
+                        @include fill( white, 0.965 );
+
+                        background: {
+
+                            repeat: no-repeat;
+                            size: cover;
+                            position: center center;
+
+                        }
+
+                    }
+
+                    // title
+                    .post_title {
+
+                        width: calc( 100% - 7rem );
+
+                        @include font( $industry, 0.875rem, 700 );
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }

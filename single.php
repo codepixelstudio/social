@@ -20,7 +20,7 @@
 
 				<?php get_template_part( 'components/content/content.author' ); ?>
 
-				<?php the_post_navigation(); ?>
+				<?php // the_post_navigation(); ?>
 
 				<?php get_sidebar(); ?>
 
