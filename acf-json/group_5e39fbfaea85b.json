@@ -1,26 +1,7 @@
 {
     "key": "group_5e39fbfaea85b",
-    "title": "Post Builder",
+    "title": "Post Attributes",
     "fields": [
-        {
-            "key": "field_5e39fc10005c3",
-            "label": "Post Subheadline",
-            "name": "post_subheadline",
-            "type": "textarea",
-            "instructions": "(optional) provide a snappy bit of copy to act as an intro sentence; use line breaks for added visual control",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 4,
-            "new_lines": "br"
-        },
         {
             "key": "field_5eb4365459724",
             "label": "Card Image",
@@ -44,6 +25,25 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5e39fc10005c3",
+            "label": "Post Subheadline",
+            "name": "post_subheadline",
+            "type": "textarea",
+            "instructions": "(optional) provide a snappy bit of copy to act as an intro sentence; use line breaks for added visual control",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "br"
         }
     ],
     "location": [
@@ -57,11 +57,11 @@
     ],
     "menu_order": 0,
     "position": "side",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1591996007
+    "modified": 1610650952
 }
