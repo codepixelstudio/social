@@ -15,9 +15,9 @@
 		<?php $card_image = get_field( 'card_image' ); ?>
 
 		<!-- image -->
-		<div class="featured_image" style="background-image:url(<?php echo $card_image; ?>);">
+		<a href="<?php the_permalink(); ?>" class="featured_image" style="background-image:url(<?php echo $card_image; ?>);" title="<?php the_title_attribute(); ?>">
 
-		</div>
+		</a>
 		<!-- END image -->
 
 		<!-- title -->
