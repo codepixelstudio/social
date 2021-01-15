@@ -1,4 +1,4 @@
-<?php
+<?php // menu registration script
 
     // register menus
 	register_nav_menus(
