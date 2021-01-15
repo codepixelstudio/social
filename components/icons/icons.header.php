@@ -15,7 +15,7 @@
 <div id="social_icons">
 
     <!-- button -->
-    <a href="<?php echo $facebook; ?>" title="Facebook" class="social-media button facebook">
+    <a href="http://www.facebook.com/coloradostateuniversity/" title="Facebook" class="social-media button facebook">
 
         <svg x="0px" y="0px" viewBox="-786 630 32 32" enable-background="new -786 630 32 32" xml:space="preserve">
 
@@ -27,7 +27,7 @@
     <!-- END button -->
 
     <!-- button -->
-    <a href="<?php echo $twitter; ?>" title="Twitter" class="social-media button twitter">
+    <a href="http://www.twitter.com/coloradostateu/" title="Twitter" class="social-media button twitter">
 
         <svg x="0px" y="0px" viewBox="-786 630 32 32" enable-background="new -786 630 32 32" xml:space="preserve">
 
@@ -39,7 +39,7 @@
     <!-- END button -->
 
     <!-- button -->
-    <a href="<?php echo $linkedin; ?>" title="LinkedIn" class="social-media button linkedin">
+    <a href="https://www.linkedin.com/school/colorado-state-university/" title="LinkedIn" class="social-media button linkedin">
 
         <svg x="0px" y="0px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
 
@@ -55,7 +55,7 @@
     <!-- END button -->
 
     <!-- button -->
-    <a href="<?php echo $instagram; ?>" title="Instagram" class="social-media button instagram">
+    <a href="http://www.instagram.com/coloradostateuniversity/" title="Instagram" class="social-media button instagram">
 
         <svg x="0px" y="0px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
 
@@ -71,7 +71,7 @@
     <!-- END button -->
 
     <!-- button -->
-    <a href="<?php echo $youtube; ?>" title="YouTube" class="social-media button youtube">
+    <a href="https://www.youtube.com/user/ColoradoStateUniv" title="YouTube" class="social-media button youtube">
 
         <svg x="0px" y="0px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
 
