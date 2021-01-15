@@ -24,6 +24,67 @@
 
             }
 
+            // taxonomy header
+            .taxonomy_header {
+
+                width: 80vw;
+                margin: 0 0 0 0;
+
+                // mobile
+                @include breakpoint ( xlarge down ) {
+
+                    width: 100vw;
+                    padding: 0 1rem 0 1rem;
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include flex-v-t-h-st( false );
+
+                    padding: 0 0 0 0;
+
+                }
+
+            }
+
+            // taxonomy template(s)
+            .post_grid {
+
+                @include flex-h-j-v-t( false );
+
+                flex-wrap: wrap;
+
+                width: 80vw;
+                margin: 0 0 0 0;
+
+                // mobile
+                @include breakpoint ( xlarge down ) {
+
+                    width: 100vw;
+                    padding: 0 1rem 0 1rem;
+
+                }
+
+                // mobile
+                @include breakpoint ( medium only ) {
+
+                    grid-template-columns: calc( 50% - 1rem ) calc( 50% - 1rem );
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include flex-v-t-h-st( false );
+
+                    padding: 0 2rem 0 2rem;
+
+                }
+
+            }
+
             // content
             .the_content {
 

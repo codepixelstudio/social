@@ -1,42 +1,60 @@
 
 <?php get_header(); ?>
 
+<!-- container -->
 <div class="main-container">
 
+	<!-- grid -->
 	<div class="main-grid">
 
+		<!-- main -->
 		<main class="the_content">
 
-			<h1 class="entry_title">
+			<!-- header -->
+			<header class="taxonomy_header">
 
-				<?php single_cat_title(); ?>
+				<!-- heading -->
+				<h1 class="entry_title">
 
-			</h1>
+					<?php single_cat_title(); ?>
 
-			<?php if ( have_posts() ) : ?>
+				</h1>
+				<!-- END heading -->
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			</header>
+			<!-- END header -->
+
+			<!-- post grid -->
+			<div class="post_grid">
+
+				<?php if ( have_posts() ) : ?>
+
+				<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php // get_template_part( 'components/content/content.base', get_post_format() ); ?>
 
 				<?php get_template_part( 'components/content/content.home', get_post_format() ); ?>
 
-			<?php endwhile; ?>
+				<?php endwhile; ?>
 
-			<?php else : ?>
+				<?php else : ?>
 
 				<?php get_template_part( 'components/content.none' ); ?>
 
-			<?php endif; ?>
+				<?php endif; ?>
 
-			<?php get_template_part( 'components/content/content.pagination' ); ?>
+				<?php get_template_part( 'components/content/content.pagination' ); ?>
+
+			</div>
+			<!-- END post grid -->
 
 		</main>
-
-		<?php // get_sidebar(); ?>
+		<!-- END main -->
 
 	</div>
+	<!-- END grid -->
 
 </div>
+<!-- END container -->
 
 <?php get_footer(); ?>
