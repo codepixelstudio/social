@@ -1,6 +1,6 @@
 
 <!-- menu.site -->
-<div id="site_menu" class="off-canvas position-right" data-off-canvas data-transition="overlap">
+<div id="site_menu" class="off-canvas position-right" data-off-canvas data-transition="overlap" data-content-scroll="false">
 
     <!-- header -->
     <div class="site_menu_header">
