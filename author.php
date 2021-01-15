@@ -1,16 +1,20 @@
 <?php
 
+	// get current author
 	$current_author = ( isset( $_GET[ 'author_name' ] ) ) ? get_user_by( 'slug', $author_name ) : get_userdata( intval( $author ) );
 
+	// set author ID
 	$author_ID = get_the_author_meta( 'ID' );
 
+	// setup query
 	$author_bio_query = new WP_Query( array(
 
 		'author'         => $author_ID,
-		'posts_per_page' => 3
+		'posts_per_page' => 4
 
 	));
 
+	// get author metadata
 	$author_metadata = get_field( 'author_meta', 'user_' . $author_ID );
 
 ?>
@@ -21,6 +25,7 @@
 
 	<div class="main-grid">
 
+		<!-- main content -->
 		<main class="author_bio_content">
 
 			<!-- container -->
@@ -168,17 +173,57 @@
 			<!-- posts -->
 			<div class="author_posts">
 
-				<?php while ( $author_bio_query->have_posts() ) : $author_bio_query->the_post(); ?>
+				<h3>
 
-				<?php // get_template_part( 'components/content/content.base', get_post_format() ); ?>
+					Recent Posts by <?php echo $current_author->nickname; ?>
 
-				<?php get_template_part( 'components/content/content.home', get_post_format() ); ?>
+				</h3>
 
-				<?php endwhile; ?>
+				<!-- list -->
+				<ul class="author_posts_list">
 
-				<?php else : ?>
+			    	<?php while ( $author_bio_query->have_posts() ) : $author_bio_query->the_post(); ?>
 
-				<?php get_template_part( 'components/content.none' ); ?>
+		            <?php $post_thumbnail = has_post_thumbnail() ? 'style="background-image:url(' . get_the_post_thumbnail_url( get_the_id(), 'x-large' ) . ');"' : ''; ?>
+
+		            <?php $post_thumbnail = get_field( 'card_image' ); ?>
+
+		    		<?php if ( has_post_thumbnail() ) :?>
+
+					<!-- item -->
+		    		<li class="author_posts_list_item">
+
+						<!-- link -->
+		                <a class="author_post_link" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+
+							<!-- thumbnail -->
+		                    <span class="post_thumbnail" style="background-image:url(<?php echo $post_thumbnail; ?>)">
+
+		                        <!-- empty -->
+
+		                    </span>
+							<!-- END thumbnail -->
+
+							<!-- title -->
+		                    <span class="post_title">
+
+		                        <?php the_title(); ?>
+
+		                    </span>
+							<!-- END title -->
+
+		                </a>
+						<!-- END link -->
+
+		            </li>
+					<!-- END item -->
+
+		    		<?php endif; ?>
+
+			    	<?php endwhile; ?>
+
+			    </ul>
+				<!-- END list -->
 
 			</div>
 			<!-- END posts -->

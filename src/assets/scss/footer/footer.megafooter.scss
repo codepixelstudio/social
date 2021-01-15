@@ -25,6 +25,17 @@
         }
 
         // mobile
+        @include breakpoint ( xxlarge up ) {
+
+            background: {
+
+                position: 5vw center;
+
+            }
+
+        }
+
+        // mobile
         @include breakpoint ( large down ) {
 
             padding-right: 12rem;

@@ -49,6 +49,8 @@
 
                     @include flex-h-j-v-s( false );
 
+                    margin: 0 0 5rem 0;
+
                     // mobile
                     @include breakpoint ( small only ) {
 
@@ -69,6 +71,8 @@
                             position: center top;
 
                         }
+
+                        // @include shadowbox( 1rem, 3.5rem, black, 0.465 );
 
                         // mobile
                         @include breakpoint ( large down ) {
@@ -186,7 +190,97 @@
                 // posts
                 .author_posts {
 
-                    @include hide;
+                    // heading
+                    h3 {
+
+                        margin: 0 0 1rem 0;
+                        // padding: 1rem 0 0 0;
+
+                        // border-top: 2px solid $roarange;
+
+                        @include font( 'Oswald', 1.25rem, 500 );
+
+                        @include text( $up );
+
+                        @include color( $roarange );
+
+                    }
+
+                    // list
+                    ul {
+
+                        @include flex-h-j-v-t( false );
+
+                        margin: 0 0 0 0;
+
+                        list-style: none;
+
+                        // list item
+                        .author_posts_list_item {
+
+                            width: calc( 25% - 1.3333333rem );
+                            height: auto;
+
+                            // link
+                            .author_post_link {
+
+                                @include flex-h-s-v-t( false );
+
+                                @include color( $new_blue );
+
+                                transition: $all220;
+
+                                // hover state
+                                &:hover {
+
+                                    @include color( $roarange );
+
+                                }
+
+                                // common
+                                span {
+
+                                    // display: inline-block;
+
+                                }
+
+                                // thumbnail
+                                .post_thumbnail {
+
+                                    flex-grow: 1;
+
+                                    width: 6rem;
+                                    height: 6rem;
+                                    margin: 0 1rem 0 0;
+
+                                    @include fill( white, 0.965 );
+
+                                    background: {
+
+                                        repeat: no-repeat;
+                                        size: cover;
+                                        position: center center;
+
+                                    }
+
+                                    // @include shadowbox( 1rem, 3rem, black, 0.465 );
+
+                                }
+
+                                // title
+                                .post_title {
+
+                                    width: calc( 100% - 7rem );
+
+                                    @include font( $industry, 0.875rem, 600 );
+
+                                }
+
+                            }
+
+                        }
+
+                    }
 
                 }
 
