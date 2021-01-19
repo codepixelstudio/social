@@ -52,7 +52,7 @@
 					<div class="entry_container">
 
 						<!-- entry -->
-						<div class="bio_entry">
+						<div class="bio_entry hometown">
 
 							<span class="entry_label">
 
@@ -70,7 +70,7 @@
 						<!-- END entry -->
 
 						<!-- entry -->
-						<div class="bio_entry">
+						<div class="bio_entry education">
 
 							<span class="entry_label">
 
