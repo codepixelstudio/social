@@ -180,6 +180,18 @@
 
                         }
 
+                        // default placeholder
+                        &.default {
+
+                            background: {
+
+                                image: url(../img/content/card.placeholder.png);
+                                position: center bottom;
+
+                            }
+
+                        }
+
                     }
 
                     // title

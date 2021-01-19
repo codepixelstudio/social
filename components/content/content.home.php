@@ -14,11 +14,31 @@
 
 		<?php $card_image = get_field( 'card_image' ); ?>
 
+		<?php if ( $card_image ) : ?>
+
 		<!-- image -->
 		<a href="<?php the_permalink(); ?>" class="featured_image" style="background-image:url(<?php echo $card_image; ?>);" title="<?php the_title_attribute(); ?>">
 
 		</a>
 		<!-- END image -->
+
+		<?php elseif ( has_post_thumbnail( $post->ID ) ) : ?>
+
+		<!-- image -->
+		<a href="<?php the_permalink(); ?>" class="featured_image" <?php echo $card_bg; ?> title="<?php the_title_attribute(); ?>">
+
+		</a>
+		<!-- END image -->
+
+		<?php else : ?>
+
+		<!-- image -->
+		<a href="<?php the_permalink(); ?>" class="featured_image default" title="<?php the_title_attribute(); ?>">
+
+		</a>
+		<!-- END image -->
+
+		<?php endif; ?>
 
 		<!-- title -->
 		<div class="post-title">
@@ -74,10 +94,7 @@
 				$avatar  = get_field( 'author_meta', 'user_' . $author );
 
 				// render avatar
-				// echo '<a class="avatar" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">' . $avatar . '</a>';
 				echo '<a class="avatar" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" style="background-image:url(' . $avatar[ 'avatar_picture' ] . ')"></a>';
-
-				// esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) )
 
 			?>
 
