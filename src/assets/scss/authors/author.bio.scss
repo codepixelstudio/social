@@ -130,6 +130,14 @@
                         // entry
                         .bio_entry {
 
+                            // hometown + education
+                            &.hometown,
+                            &.education {
+
+                                @include hide;
+
+                            }
+
                             // email
                             &.email {
 
