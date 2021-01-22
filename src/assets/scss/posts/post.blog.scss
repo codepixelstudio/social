@@ -201,6 +201,9 @@
                         padding: 0 2rem 0 2rem;
 
                         @include font( $industry, 1.25rem, 700 );
+                        @include font( 'Oswald', 1.25rem, 500 );
+
+                        @include text( $up );
 
                         // link
                         a {

@@ -17,7 +17,9 @@
 
             margin: 0 0 2rem 0;
 
-            @include font( $industry, 1.25rem, 700 );
+            @include font( 'Oswald', 1.25rem, 500 );
+
+            @include text( $up );
 
             @include color( $gold );
 
@@ -87,6 +89,13 @@
                             repeat: no-repeat;
                             size: cover;
                             position: center center;
+
+                        }
+
+                        // default
+                        &.default {
+
+                            @include fill( red );
 
                         }
 

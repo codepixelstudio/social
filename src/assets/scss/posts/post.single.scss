@@ -97,7 +97,8 @@
 
                         margin: 0 0 1rem 0;
 
-                        @include font( $industry, 2.5rem, 600 );
+                        // @include font( $industry, 2.5rem, 600 );
+                        @include font( 'Oswald', 2.5rem, 500 );
 
                         @include typo( 3rem, 0em );
 
