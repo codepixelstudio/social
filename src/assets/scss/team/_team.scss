@@ -9,7 +9,17 @@
         // container
         .main-container {
 
+            max-width: none;
+
+            // margin: 0 0 0 0;
             padding: 0 0 0 0;
+
+            // mobile
+            @include breakpoint ( 1368px up ) {
+
+                max-width: 80vw;
+
+            }
 
             // grid
             .main-grid {
@@ -44,6 +54,13 @@
                         @include flex-v-t-h-st( false );
 
                         margin: 0 0 3rem 0;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        margin: 0 0 2rem 0;
 
                     }
 
@@ -139,6 +156,20 @@
                         repeat: no-repeat;
                         size: cover;
                         position: center center;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( xlarge up ) {
+
+                        height: 40rem;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( medium down ) {
+
+                        height: 24rem;
 
                     }
 
