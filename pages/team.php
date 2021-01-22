@@ -79,7 +79,12 @@
 
 				echo '<div class="bio_block">
 
-					<a class="bio_link" href="' . get_site_url() . '/author/' . $author_bio . '" style="background-image:url(' . $author_metadata[ 'team_picture' ] . ');">
+					<a class="bio_link" href="' . get_site_url() . '/author/' . $author_bio . '">
+
+						<div class="bio_picture" style="background-image:url(' . $author_metadata[ 'team_picture' ] . ');">
+
+
+						</div>
 
 						<div class="tag">
 

@@ -163,37 +163,81 @@
                         // before
                         &:before {
 
-                            opacity: 1.000
+                            opacity: 0.000;
 
                         }
 
                         // after
                         &:after {
 
-                            opacity: 0.765;
+                            opacity: 1.000;
+
+                        }
+
+                        // picture
+                        .bio_picture {
+
+                            filter: grayscale( 0% );
+
+                        }
+
+                        // name tag
+                        .tag {
+
+                            // common
+                            span {
+
+                                // title
+                                &.title {
+
+                                    @include color( lighten( $cvnavy, 7.5% ) );
+
+                                }
+
+                            }
 
                         }
 
                     }
 
-                    // after
-                    &:after {
+                    // picture
+                    .bio_picture {
 
-                        @include fill( $roarange, 0.000 );
+                        position: absolute;
+
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        z-index: 0;
+
+                        background: {
+
+                            repeat: no-repeat;
+                            size: cover;
+                            position: center center;
+
+                        }
+
+                        // filter: grayscale( 50% );
+
+                        transition: $all220;
 
                     }
 
+                    // name tag
                     .tag {
 
                         position: relative;
 
                         z-index: 200;
 
-                        // padding: 2rem 2rem 2rem 2rem;
                         padding: 1rem 1rem 1rem 1rem;
 
                         @include fill( darken( $roarange, 7.5% ), 0.165 );
                         @include fill( $dark, 0.085 );
+                        @include fill( transparent );
 
                         // mobile
                         @include breakpoint ( small only ) {
@@ -202,43 +246,54 @@
 
                         }
 
-                    }
+                        // common
+                        span {
 
-                    span {
+                            position: relative;
 
-                        position: relative;
+                            z-index: 100;
 
-                        z-index: 100;
-
-                        display: block;
-
-                        @include font( $industry, 0.875rem, 600 );
-
-                        @include typo( 1rem, 0.035em );
-
-                        text-align: center;
-
-                        // mobile
-                        @include breakpoint ( small only ) {
-
-                            @include font( $industry, 0.6875rem, 600 );
-
-                        }
-
-                        &.title {
-
-                            @include font( $industry, 0.625rem, 700 );
+                            display: block;
 
                             @include text( $up, center );
 
-                            @include typo( 1rem, 0.045em );
+                            // name
+                            &.name {
 
-                            @include color( $gold );
+                                margin: 0 0 0.5rem 0;
 
-                            // mobile
-                            @include breakpoint ( small only ) {
+                                @include font( 'Oswald', 1rem, 400 );
+
+                                @include typo( 1rem, 0.035em );
+
+                                // mobile
+                                @include breakpoint ( small only ) {
+
+                                    @include font( 'Oswald', 0.875rem, 500 );
+
+                                }
+
+                            }
+
+                            // title
+                            &.title {
 
                                 @include font( $industry, 0.625rem, 700 );
+
+                                @include text( $up, center );
+
+                                @include typo( 1rem, 0.045em );
+
+                                @include color( $roarange );
+
+                                transition: $all220;
+
+                                // mobile
+                                @include breakpoint ( small only ) {
+
+                                    @include font( $industry, 0.625rem, 700 );
+
+                                }
 
                             }
 
@@ -268,7 +323,15 @@
 
                         z-index: 10;
 
-                        opacity: 0.365;
+                        opacity: 1.000;
+
+                        @include gradient(
+
+                            0deg,
+                            $cvnavy, 0.000, 0%,
+                            transparent, 1.000, 50%
+
+                        );
 
                     }
 
@@ -278,6 +341,16 @@
                         z-index: 20;
 
                         opacity: 0.000;
+
+                        // @include fill( $roarange, 0.000 );
+
+                        @include gradient(
+
+                            0deg,
+                            $roarange, 0.125, 0%,
+                            $cvnavy, 0.465, 100%
+
+                        );
 
                     }
 
