@@ -6,6 +6,8 @@
 
 */ ?>
 
+<?php if ( have_posts() ) :?>
+
 <!-- related posts -->
 <div class="related_posts">
 
@@ -15,28 +17,37 @@
 
     </h4>
 
-    <?php if ( have_posts() ) :?>
-
     <ul class="related_posts_list">
 
     	<?php while ( have_posts() ) : the_post(); ?>
 
-            <?php $post_thumbnail = has_post_thumbnail() ? 'style="background-image:url(' . get_the_post_thumbnail_url( get_the_id(), 'x-large' ) . ');"' : ''; ?>
+            <?php $native_thumbnail = 'style="background-image:url(' . get_the_post_thumbnail_url( get_the_id(), 'fp-small' ) . ');"'; ?>
 
-            <?php $post_thumbnail = get_field( 'card_image' ); ?>
-
-    		<?php if ( has_post_thumbnail() ) :?>
+            <?php $custom_thumbnail = get_field( 'card_image' ); ?>
 
     		<li class="related_posts_list_item">
 
                 <a class="related_post_link" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 
-                    <!-- <span class="post_thumbnail" <?php echo $post_thumbnail; ?>> -->
-                    <span class="post_thumbnail" style="background-image:url(<?php echo $post_thumbnail; ?>)">
+                    <?php if ( $custom_thumbnail ) : ?>
 
-                        <?php // the_post_thumbnail(); ?>
+                    <span class="post_thumbnail custom" style="background-image:url(<?php echo $custom_thumbnail; ?>)">
 
                     </span>
+
+                    <?php elseif ( has_post_thumbnail( $post->ID ) ) : ?>
+
+                    <span class="post_thumbnail native" <?php echo $native_thumbnail; ?>>
+
+                    </span>
+
+                    <?php else : ?>
+
+                    <span class="post_thumbnail default">
+
+                    </span>
+
+                    <?php endif; ?>
 
                     <span class="post_title">
 
@@ -48,13 +59,11 @@
 
             </li>
 
-    		<?php endif; ?>
-
     	<?php endwhile; ?>
 
     </ul>
 
-    <?php endif; ?>
-
 </div>
 <!-- END related posts -->
+
+<?php endif; ?>
