@@ -59,7 +59,7 @@
 
 			?>
 
-			<pre class="developer">
+			<pre class="developer hide">
 
 				<?php // print_r( $author_meta ); ?>
 
@@ -79,7 +79,7 @@
 
 				echo '<div class="bio_block">
 
-					<a class="bio_link" href="' . get_site_url() . '/author/' . $author_bio . '" style="background-image:url(' . $author_metadata[ 'bio_picture' ] . ');">
+					<a class="bio_link" href="' . get_site_url() . '/author/' . $author_bio . '" style="background-image:url(' . $author_metadata[ 'team_picture' ] . ');">
 
 						<div class="tag">
 
