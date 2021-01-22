@@ -34,14 +34,36 @@
 
 			<?php
 
-				// $authors = get_users( [ 'role__in' => [ 'author' ] ] );
-				$authors = get_users();
+				// configure author query
+				$author_group = array(
+
+					'role__in' => array(
+
+						// 'supereditor',
+						// 'author',
+						// 'administrator'
+
+					),
+					// 'fields'   => 'all_with_meta',
+					'meta_key' => $author_meta[ 'order' ],
+					'orderby'  => 'meta_value_num',
+					'order'    => 'ASC'
+
+				);
+
+				// get users function call
+				$authors = get_users( $author_group );
+
+				// get users
+				$authors = get_users_by_include( array( 'include' => array( 83, 91, 125, 106, 127, 129, 126, 128, 130 ) ) );
 
 			?>
 
-			<pre class="developer hide">
+			<pre class="developer">
 
-				<?php  print_r( $authors ); ?>
+				<?php // print_r( $author_meta ); ?>
+
+				<?php // print_r( $authors ); ?>
 
 			</pre>
 
@@ -69,7 +91,7 @@
 
 							<span class="title">
 
-								' . $author_metadata[ 'role' ] . '
+								' . $author_metadata[ 'title' ] . '
 
 							</span>
 

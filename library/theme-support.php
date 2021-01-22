@@ -136,6 +136,28 @@
 
 	}
 
+	// explicitly get users
+	function get_users_by_include( $args = array() ) {
+
+		$blogusers = get_users( $args );
+
+		if( isset( $args[ 'include' ] ) ){
+
+			$include = $args[ 'include' ];
+
+			usort( $blogusers, function ( $a, $b ) use( $include ){
+
+				$q = array_flip( $include );
+
+				return $q[ $a->ID ] - $q[ $b->ID ];
+
+			});
+
+		}
+
+		return $blogusers;
+	}
+
 	// core theme support
 	if ( ! function_exists( 'foundationpress_theme_support' ) ) :
 

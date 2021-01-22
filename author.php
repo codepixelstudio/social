@@ -28,8 +28,18 @@
 		<!-- main content -->
 		<main class="author_bio_content">
 
+			<?php if ( $author_bio_query->found_posts >= 3 ) {
+
+				$grid_class = 'populated';
+
+			} else {
+
+				$grid_class = 'empty';
+
+			}?>
+
 			<!-- container -->
-			<div class="author_bio_grid">
+			<div class="author_bio_grid <?php echo $grid_class; ?>">
 
 				<!-- image -->
 				<div class="author_bio_image" style="background-image:url(<?php echo $author_metadata[ 'bio_picture' ]; ?>)">
@@ -168,6 +178,8 @@
 			</div>
 			<!-- END container -->
 
+			<?php if ( $author_bio_query->found_posts >= 3 ) : ?>
+
 			<?php if ( $author_bio_query->have_posts() ) : ?>
 
 			<!-- posts -->
@@ -227,6 +239,8 @@
 
 			</div>
 			<!-- END posts -->
+
+			<?php endif; ?>
 
 			<?php endif; ?>
 

@@ -58,6 +58,20 @@
 
                     }
 
+                    // has posts
+                    &.populated {
+
+                        margin: 0 0 5rem 0;
+
+                    }
+
+                    // empty
+                    &.empty {
+
+                        margin: 0 0 0 0;
+
+                    }
+
                     // image
                     .author_bio_image {
 

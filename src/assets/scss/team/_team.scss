@@ -227,7 +227,7 @@
 
                         &.title {
 
-                            @include font( $industry, 0.6875rem, 600 );
+                            @include font( $industry, 0.625rem, 700 );
 
                             @include text( $up, center );
 

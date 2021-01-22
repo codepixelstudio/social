@@ -89,7 +89,26 @@
                     "label": "Role",
                     "name": "role",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Informal title to appear on individual bio page.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_600a224626618",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "More formal title to appear on Meet The Team page.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -175,5 +194,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1611066209
+    "modified": 1611276896
 }
