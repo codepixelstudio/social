@@ -143,9 +143,11 @@
         }
 
         // form
-        #newsletter_signup_form {
+        #mc-embedded-subscribe-form{
 
-            // position: relative;
+            position: relative;
+
+            overflow: hidden;
 
             // fields
             .form_fields {
