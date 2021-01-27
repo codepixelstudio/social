@@ -99,6 +99,7 @@
                         @include breakpoint ( small only ) {
 
                             width: 100%;
+                            height: 50vh;
 
                         }
 
@@ -212,6 +213,13 @@
                 // posts
                 .author_posts {
 
+                    // empty
+                    &.empty {
+
+                        @include hide;
+
+                    }
+
                     // heading
                     h3 {
 
@@ -237,11 +245,53 @@
 
                         list-style: none;
 
+                        // mobile
+                        @include breakpoint ( medium only ) {
+
+                            flex-wrap: wrap;
+
+                        }
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            @include flex-v-t-h-st( false );
+
+                        }
+
                         // list item
                         .author_posts_list_item {
 
                             width: calc( 25% - 1.3333333rem );
                             height: auto;
+
+                            // mobile
+                            @include breakpoint ( medium only ) {
+
+                                width: calc( 50% - 1rem );
+                                margin: 1rem 0 1rem 0;
+
+                            }
+
+                            // mobile
+                            @include breakpoint ( small only ) {
+
+                                width: 100%;
+                                margin: 0 0 2rem 0;
+
+                            }
+
+                            // last child
+                            &:last-child {
+
+                                // mobile
+                                @include breakpoint ( small only ) {
+
+                                    margin: 0 0 0 0;
+
+                                }
+
+                            }
 
                             // link
                             .author_post_link {
@@ -285,7 +335,7 @@
 
                                     }
 
-                                    // @include shadowbox( 1rem, 3rem, black, 0.465 );
+                                    @include shadowbox( 1rem, 3rem, black, 0.565 );
 
                                 }
 

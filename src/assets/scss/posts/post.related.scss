@@ -12,6 +12,20 @@
 
         @include fill( lighten( $sidebar, 5% ), 0.000 );
 
+        // mobile
+        @include breakpoint ( medium down ) {
+
+            padding: 5rem 5rem 4rem 5rem;
+
+        }
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            padding: 3rem 3rem 3rem 3rem;
+
+        }
+
         // heading
         h4 {
 
@@ -24,9 +38,16 @@
             @include color( $gold );
 
             // mobile
-            @include breakpoint ( small only ) {
+            @include breakpoint ( medium down ) {
 
                 margin: 0 0 1rem 0;
+
+            }
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                // margin: 0 0 1rem 0;
 
                 @include font( $industry, 1rem, 700 );
 
@@ -43,11 +64,53 @@
 
             list-style: none;
 
+            // mobile
+            @include breakpoint ( medium only ) {
+
+                flex-wrap: wrap;
+
+            }
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                @include flex-v-t-h-st( false );
+
+            }
+
             // list item
             .related_posts_list_item {
 
                 width: calc( 25% - 1.3333333rem );
                 height: auto;
+
+                // mobile
+                @include breakpoint ( medium only ) {
+
+                    width: calc( 50% - 1rem );
+                    margin: 1rem 0 1rem 0;
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    width: 100%;
+                    margin: 0 0 2rem 0;
+
+                }
+
+                // last child
+                &:last-child {
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        margin: 0 0 0 0;
+
+                    }
+
+                }
 
                 // link
                 .related_post_link {
@@ -91,6 +154,8 @@
                             position: center center;
 
                         }
+
+                        @include shadowbox( 1rem, 3rem, black, 0.565 );
 
                         // default
                         &.default {

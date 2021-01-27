@@ -107,9 +107,9 @@
                         // mobile
                         @include breakpoint ( small only ) {
 
-                            @include font( $industry, 1.875rem, 600 );
+                            @include font( 'Oswald', 1.875rem, 500 );
 
-                            @include typo( 2.25rem, 0.015em );
+                            @include typo( 2.25rem, 0em );
 
                         }
 

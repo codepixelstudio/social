@@ -183,7 +183,7 @@
 			<?php if ( $author_bio_query->have_posts() ) : ?>
 
 			<!-- posts -->
-			<div class="author_posts">
+			<div class="author_posts <?php echo $grid_class; ?>">
 
 				<h3>
 
