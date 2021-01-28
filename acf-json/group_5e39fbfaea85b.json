@@ -3,25 +3,6 @@
     "title": "Post Attributes",
     "fields": [
         {
-            "key": "field_6003230d0a9f1",
-            "label": "Migration Status",
-            "name": "migration_status",
-            "type": "true_false",
-            "instructions": "Note: this is a tool used to migrate\/update content prior to launching the new site on 2021.01.19 and can be disregarded.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "Ready",
-            "ui_off_text": "Not Ready"
-        },
-        {
             "key": "field_5eb4365459724",
             "label": "Card Image",
             "name": "card_image",
@@ -82,5 +63,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1611061215
+    "modified": 1611841093
 }

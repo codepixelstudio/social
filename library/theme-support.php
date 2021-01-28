@@ -1,7 +1,7 @@
 <?php // register theme support for languages, menus, post-thumbnails, post-formats etc.
 
 	// filter hook for status column
-	add_filter( 'manage_post_posts_columns', 'custom_migration_attributes' );
+	// add_filter( 'manage_post_posts_columns', 'custom_migration_attributes' );
 
 	// define custom status column
 	function custom_migration_attributes ( $columns ) {
