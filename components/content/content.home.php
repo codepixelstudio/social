@@ -10,14 +10,15 @@
 	<!-- header -->
 	<header class="post-header">
 
-		<?php $card_bg = 'style="background-image:url(' . get_the_post_thumbnail_url( get_the_id(), 'fp-small' ) . ');"'; ?>
-
+		<!-- <?php $card_bg = 'style="background-image:url(' . get_the_post_thumbnail_url( get_the_id(), 'fp-small' ) . ');"'; ?> -->
+		<?php $card_bg = 'style="background-image:url(' . get_stylesheet_directory_uri() . '/dist/assets/img/utilities/pixel.gif);" data-src="' . get_the_post_thumbnail_url( get_the_id(), 'fp-small' ) . '"'; ?>
 		<?php $card_image = get_field( 'card_image' ); ?>
+		<?php $default_image = get_stylesheet_directory_uri() . '/dist/assets/img/content/card.placeholder.png'; ?>
 
 		<?php if ( $card_image ) : ?>
 
 		<!-- image -->
-		<a href="<?php the_permalink(); ?>" class="featured_image" style="background-image:url(<?php echo $card_image; ?>);" title="<?php the_title_attribute(); ?>">
+		<a href="<?php the_permalink(); ?>" class="featured_image custom lazyload" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/img/utilities/pixel.gif);" data-src="<?php echo $card_image; ?>" title="<?php the_title_attribute(); ?>">
 
 		</a>
 		<!-- END image -->
@@ -25,7 +26,7 @@
 		<?php elseif ( has_post_thumbnail( $post->ID ) ) : ?>
 
 		<!-- image -->
-		<a href="<?php the_permalink(); ?>" class="featured_image" <?php echo $card_bg; ?> title="<?php the_title_attribute(); ?>">
+		<a href="<?php the_permalink(); ?>" class="featured_image inherited lazyload" <?php echo $card_bg; ?> title="<?php the_title_attribute(); ?>">
 
 		</a>
 		<!-- END image -->
@@ -33,7 +34,7 @@
 		<?php else : ?>
 
 		<!-- image -->
-		<a href="<?php the_permalink(); ?>" class="featured_image default" title="<?php the_title_attribute(); ?>">
+		<a href="<?php the_permalink(); ?>" class="featured_image default lazyload" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/img/utilities/pixel.gif);" data-src="<?php echo $default_image; ?>" title="<?php the_title_attribute(); ?>">
 
 		</a>
 		<!-- END image -->
