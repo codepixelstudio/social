@@ -13,6 +13,8 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&display=swap" rel="stylesheet">
 
+		<link rel="shortcut icon" type="image/x-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
+
 		<?php wp_head(); ?>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
