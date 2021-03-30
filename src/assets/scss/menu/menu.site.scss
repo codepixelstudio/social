@@ -37,6 +37,218 @@
 
         }
 
+        // search
+        .site_menu_search {
+
+            margin: 0 0 2rem 0;
+
+            // wrap
+            .input_wrap {
+
+                position: relative;
+
+                @include flex-h-j-v-s( false );
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    width: 100%;
+                    margin: 0 0 2rem 0;
+
+                    // last child
+                    &:last-child {
+
+                        margin: 0 0 1rem 0;
+
+                    }
+
+                }
+
+                // submit
+                input[ type='submit' ] {
+
+                    position: absolute;
+
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+
+                    z-index: 10;
+
+                    // width: 3rem;
+                    height: 3rem;
+                    padding: 0.0625rem 1rem 0 1rem;
+
+                    overflow: hidden;
+
+                    border: none;
+
+                    // text-indent: -999rem;
+
+                    @include font( $industry, 0.6875rem, 600 );
+
+                    @include typo( 0.625rem, 0.035em );
+
+                    @include color( white );
+
+                    @include fill( $g140 );
+
+                    transition: $all220;
+
+                    // hover state
+                    &:hover {
+
+                        @include fill( darken( $roarange, 7.5% ) );
+
+                        cursor: pointer;
+
+                    }
+
+                    // after
+                    &:after {
+
+                        @include flex-v-c-h-c( false );
+
+                        @include codicon( 3rem, 3rem, 1rem, 1rem, $campaign, '\EB37' );
+
+                        position: absolute;
+
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        z-index: 10;
+
+                        text-indent: 0;
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            width: 2rem;
+                            height: 2rem;
+                            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+                        }
+
+                    }
+
+                }
+
+                // label
+                label {
+
+                    position: absolute;
+
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+
+                    z-index: 10;
+
+                    width: 3rem;
+                    height: 3rem;
+
+                    overflow: hidden;
+
+                    text-indent: -999rem;
+
+                    transform: scaleX( -1 );
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        width: 2rem;
+                        height: 2rem;
+
+                    }
+
+                    // after
+                    &:after {
+
+                        @include flex-v-c-h-c( false );
+
+                        @include codicon( 3rem, 3rem, 1rem, 1rem, transparentize( white, 0.485 ), '\EB37' );
+
+                        position: absolute;
+
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        z-index: 10;
+
+                        text-indent: 0;
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            width: 2rem;
+                            height: 2rem;
+                            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            // text
+            input[ type='text' ] {
+
+                @include flex-h-s-v-c( false );
+
+                width: 100%;
+                height: 3rem;
+                margin: 0 0 0 0;
+                padding: 0.0625rem 3rem 0 3rem;
+
+                border: none;
+
+                @include font( $industry, 0.875rem, 500 );
+
+                @include color( white, 0.000 );
+
+                @include fill( $app05, 0.365 );
+
+                // @include shadowbox( 1rem, 3rem, black, 0.565 );
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    height: 2rem;
+                    padding: 0.0625rem 1rem 0 2rem;
+
+                }
+
+                // focus state
+                &:focus {
+
+                    @include fill( $dark, 0.000 );
+
+                }
+
+                // placeholder
+                &::placeholder {
+
+                    @include font( $industry, 0.875rem, 600 );
+
+                    @include color( white, 0.365 );
+
+                    // mobile
+                    @include breakpoint ( large down ) {
+
+                        @include font( $industry, 0.6875rem, 600 );
+
+                    }
+
+                }
+
+            }
+
+        }
+
         // header
         .site_menu_header {
 
@@ -220,7 +432,7 @@
                     height: 3rem;
                     margin: 0;
                     // padding: 0.0625rem 0 0 3rem;
-                    padding: 0 0 0 3rem;
+                    padding: 0 0 0 1rem;
 
                     @include font( $industry, 0.875rem, 600 );
 
@@ -242,7 +454,7 @@
                     @include font( $industry, 0.75rem, 700, italic );
                     @include font( $industry, 0.6875rem, 700, italic );
 
-                    @include color( white, 0.365 );
+                    @include color( white, 0.475 );
 
                 }
 

@@ -2,6 +2,28 @@
 <!-- menu.site -->
 <div id="site_menu" class="off-canvas position-right" data-off-canvas data-transition="overlap" data-content-scroll="false">
 
+    <!-- search -->
+    <div class="site_menu_search">
+
+        <!-- search form -->
+        <form role="search" method="get" id="news_search" action="<?php echo home_url(); ?>/">
+
+            <!-- wrap -->
+            <span class="input_wrap input_query">
+
+                <label for="s">search</label>
+                <input type="text" class="text" value="" name="s" id="s" placeholder="">
+                <input type="submit" value="search" class="submit">
+
+            </span>
+            <!-- END wrap -->
+
+        </form>
+        <!-- END search form -->
+
+    </div>
+    <!-- END search -->
+
     <!-- header -->
     <div class="site_menu_header">
 
